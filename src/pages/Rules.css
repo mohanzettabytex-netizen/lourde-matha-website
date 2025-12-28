@@ -1,0 +1,49 @@
+.rules-hero {
+  background: linear-gradient(135deg, #0f2a44, #1e7f5c);
+  color: white;
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.rules-hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 10px;
+}
+
+.rules-list {
+  max-width: 800px;
+  margin: 60px auto 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.rule-item {
+  background: white;
+  padding: 22px 26px;
+  border-radius: 16px;
+  box-shadow: 0 14px 32px rgba(0,0,0,0.06);
+  cursor: pointer;
+}
+
+.rule-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rule-title h3 {
+  color: #0f2a44;
+}
+
+.rule-title span {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #1e7f5c;
+}
+
+.rule-content {
+  margin-top: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+}
