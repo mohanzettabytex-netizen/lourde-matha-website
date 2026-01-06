@@ -65,12 +65,12 @@ export default function Updates() {
 
           <div className="hero-cards">
             <div className="hero-card reveal-right delay-1">
-              <strong>Latest</strong>
+              <strong>Latest</strong><br/>
               <span>School News</span>
             </div>
 
             <div className="hero-card reveal-right delay-2">
-              <strong>Events</strong>
+              <strong>Events</strong><br/>
               <span>Programs & Notices</span>
             </div>
           </div>

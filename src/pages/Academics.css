@@ -9,15 +9,16 @@
 }
 
 /* ===============================
-   PAGE
+   PAGE BASE
 ================================ */
 .academics {
   font-family: system-ui, -apple-system, BlinkMacSystemFont;
   color: var(--dark);
+  overflow-x: hidden;
 }
 
 /* ===============================
-   HERO – IDENTICAL TO ABOUT
+   HERO SECTION
 ================================ */
 .academics-hero {
   padding: 140px 0 120px;
@@ -27,17 +28,29 @@
     var(--white);
 }
 
-.hero-grid {
+/* HERO GRID (MATCH STUDENT LIFE) */
+.academics-hero .hero-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 60px;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 64px;
   align-items: center;
 }
 
-/* TEXT */
+/* HERO TEXT */
+.hero-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--primary-deep);
+  margin-bottom: 18px;
+}
+
 .hero-text h1 {
   font-size: clamp(2.8rem, 5vw, 4rem);
-  margin-bottom: 16px;
+  line-height: 1.15;
+  margin-bottom: 18px;
 }
 
 .hero-text p {
@@ -46,41 +59,55 @@
   color: var(--muted);
 }
 
-.hero-badge {
-  display: inline-block;
-  font-size: 0.7rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--primary-deep);
-  font-weight: 700;
-  margin-bottom: 14px;
-}
-
-/* FLOATING CARDS */
+/* ===============================
+   HERO STAT CARDS
+   (IDENTICAL TO STUDENT LIFE)
+================================ */
 .hero-cards {
   display: grid;
-  gap: 22px;
+  gap: 24px;
 }
 
 .hero-card {
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(10px);
-  padding: 28px;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px);
+  padding: 26px 28px;
+  border-radius: 22px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-.hero-card.accent {
-  border-left: 5px solid var(--primary);
+/* REMOVE browser defaults */
+.hero-card h3,
+.hero-card p {
+  margin: 0;
+  padding: 0;
 }
 
+/* TITLE = StudentLife <strong> */
 .hero-card h3 {
-  margin-bottom: 8px;
+  font-size: 1.6rem;
+  font-weight: 800;
   color: var(--primary-deep);
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+/* TEXT = StudentLife <span> */
+.hero-card p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+/* Optional hover (same feel as Student Life) */
+.hero-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.12);
 }
 
 /* ===============================
-   STORY
+   STORY SECTION
 ================================ */
 .academics-story {
   padding: 90px 0;
@@ -96,7 +123,7 @@
 }
 
 /* ===============================
-   VALUES – SAME AS ABOUT
+   VALUES SECTION
 ================================ */
 .academics-values {
   padding: 110px 0;
@@ -114,11 +141,11 @@
 }
 
 .value-glass {
-  background: rgba(255,255,255,0.75);
+  background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(14px);
   padding: 44px;
   border-radius: 26px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
 }
 
 .value-glass span {
@@ -144,7 +171,7 @@
 }
 
 /* ===============================
-   STATEMENT BLOCK
+   STATEMENT SECTION
 ================================ */
 .academics-statement {
   padding: 120px 0;
@@ -168,7 +195,7 @@
    RESPONSIVE
 ================================ */
 @media (max-width: 900px) {
-  .hero-grid {
+  .academics-hero .hero-grid {
     grid-template-columns: 1fr;
     text-align: center;
   }
@@ -176,10 +203,15 @@
   .hero-text p {
     margin: auto;
   }
+
+  /* Match Student Life mobile hero cards */
+  .academics-hero .hero-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* ===============================
-   REVEAL ANIMATIONS (ACADEMICS ONLY)
+   REVEAL ANIMATIONS
 ================================ */
 .academics .reveal {
   opacity: 0;
@@ -198,9 +230,8 @@
   transform: translate(0, 0);
 }
 
-/* DELAYS */
+/* STAGGER DELAYS */
 .academics .delay-1 { transition-delay: 0.15s; }
 .academics .delay-2 { transition-delay: 0.3s; }
 .academics .delay-3 { transition-delay: 0.45s; }
 .academics .delay-4 { transition-delay: 0.6s; }
-

@@ -9,7 +9,7 @@ export default function Footer() {
 
         {/* BRAND */}
         <div className="footer-brand">
-          <h2>Lourde Matha Convent</h2>
+          <h2>Lourde Matha </h2>
           <p>
             A nurturing educational institution committed to academic excellence,
             moral values, and holistic student development.
@@ -28,7 +28,7 @@ export default function Footer() {
         {/* CONTACT */}
         <div className="footer-column">
           <h4>Contact</h4>
-          <p>Dharli Road, Udumalpet</p>
+          <p>Dhali Road, Udumalpet</p>
           <p>Office Hours: 9:00 AM – 4:00 PM</p>
           <p>Email: info@lourdematha.edu</p>
         </div>
@@ -40,7 +40,7 @@ export default function Footer() {
 
       {/* BOTTOM */}
       <div className="footer-bottom">
-        © {new Date().getFullYear()} Lourde Matha Convent Hr. Sec. School.
+        © {new Date().getFullYear()} Lourde Matha Convent Matriculation Higher Secondary School.
         All rights reserved.
       </div>
 

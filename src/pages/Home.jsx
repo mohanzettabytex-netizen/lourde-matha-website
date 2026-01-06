@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Home.css";
 
 const heroSlides = [
@@ -20,15 +21,37 @@ const heroSlides = [
 ];
 
 const stats = [
-  { value: 25, suffix: "+", label: "Years of Excellence" },
-  { value: 100, suffix: "%", label: "Board Results" },
-  { value: 50, suffix: "+", label: "Awards" },
-  { value: 1000, suffix: "+", label: "Alumni" }
+  {
+    value: 25,
+    suffix: "+",
+    label: "Years of Excellence",
+    to: "/about",
+  },
+  {
+    value: 1200,
+    suffix: "+",
+    label: "Students",
+    to: "/student-life",
+  }, 
+  {
+    value: 15,
+    suffix: "+",
+    label: "Awards",
+    to: "/updates",
+  },
+  {
+    value: 60,
+    suffix: "+",
+    label: "Alumini",
+    to: "/academics",
+  }
 ];
 
 
 export default function Home() {
   const [active, setActive] = useState(0);
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     const timer = setInterval(
@@ -101,7 +124,7 @@ export default function Home() {
         <div className="container hero-grid">
           <div className="hero-text">
             <span className="hero-badge">
-              Lourde Matha Convent Hr. Sec. School
+              Lourde Matha Convent Matriculation Higher Secondary School
             </span>
 
             <h1>{heroSlides[active].title}</h1>
@@ -182,12 +205,20 @@ export default function Home() {
       <section className="home-stats">
         <div className="container stats-grid">
           {stats.map((s) => (
-            <Stat
+            <div
               key={s.label}
-              value={s.value}
-              suffix={s.suffix}
-              label={s.label}
-            />
+              className="stat clickable"
+              onClick={() => navigate(s.to)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => e.key === "Enter" && navigate(s.to)}
+            >
+              <Stat
+                value={s.value}
+                suffix={s.suffix}
+                label={s.label}
+              />
+            </div>
           ))}
         </div>
       </section>

@@ -68,12 +68,12 @@ export default function StudentLife() {
 
           <div className="hero-cards">
             <div className="hero-card reveal-right delay-1">
-              <strong>Balanced</strong>
+              <strong>Balanced</strong><br/>
               <span>Mind & Body</span>
             </div>
 
             <div className="hero-card reveal-right delay-2">
-              <strong>Values</strong>
+              <strong>Values</strong><br/>
               <span>Faith & Discipline</span>
             </div>
           </div>

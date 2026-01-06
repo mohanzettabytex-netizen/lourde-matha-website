@@ -58,11 +58,11 @@
 }
 
 .hero-card {
-  background: rgba(255,255,255,0.85);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(14px);
   padding: 26px;
   border-radius: 22px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 .hero-card strong {
@@ -75,7 +75,6 @@
   color: var(--muted);
 }
 
-/* INTRO */
 .studentlife-intro {
   padding: 90px 0;
 }
@@ -89,7 +88,6 @@
   color: var(--muted);
 }
 
-/* CONTENT */
 .studentlife-content {
   padding: 110px 0;
   background: linear-gradient(135deg, var(--primary-soft), #fff);
@@ -103,17 +101,17 @@
 
 /* INFO CARD */
 .info-card {
-  background: rgba(255,255,255,0.85);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(14px);
   padding: 40px;
   border-radius: 26px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .info-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 40px 80px rgba(0,0,0,0.12);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.12);
 }
 
 .info-card span {
@@ -165,6 +163,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 /* ===============================
    REVEAL ANIMATIONS – STUDENT LIFE
 ================================ */
@@ -186,9 +185,22 @@
 }
 
 /* STAGGER DELAYS */
-.studentlife-page .delay-1 { transition-delay: 0.15s; }
-.studentlife-page .delay-2 { transition-delay: 0.3s; }
-.studentlife-page .delay-3 { transition-delay: 0.45s; }
-.studentlife-page .delay-4 { transition-delay: 0.6s; }
-.studentlife-page .delay-5 { transition-delay: 0.75s; }
+.studentlife-page .delay-1 {
+  transition-delay: 0.15s;
+}
 
+.studentlife-page .delay-2 {
+  transition-delay: 0.3s;
+}
+
+.studentlife-page .delay-3 {
+  transition-delay: 0.45s;
+}
+
+.studentlife-page .delay-4 {
+  transition-delay: 0.6s;
+}
+
+.studentlife-page .delay-5 {
+  transition-delay: 0.75s;
+}

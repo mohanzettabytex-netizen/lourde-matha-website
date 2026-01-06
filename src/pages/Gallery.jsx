@@ -1,5 +1,12 @@
 import { useEffect } from "react";
 import "./Gallery.css";
+import { loadImagesFromFolder } from "../utils/loadImages";
+
+const galleryImages = loadImagesFromFolder([
+  "AnnualDay",
+  "Gendral",
+  "Christmas",
+]);
 
 export default function Gallery() {
 
@@ -24,22 +31,8 @@ export default function Gallery() {
     return () => observer.disconnect();
   }, []);
 
-  const galleryImages = [
-    "https://images.unsplash.com/photo-1580582932707-520aed937b7b",
-    "https://images.unsplash.com/photo-1596495577886-d920f1fb7238",
-    "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f",
-    "https://images.unsplash.com/photo-1509062522246-3755977927d7",
-    "https://images.unsplash.com/photo-1606312619070-d48b4c652a52",
-    "https://images.unsplash.com/photo-1562774053-701939374585",
-    "https://images.unsplash.com/photo-1524178232363-1fb2b075b655",
-    "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
-    "https://images.unsplash.com/photo-1519452575417-564c1401ecc0"
-  ];
-
   return (
     <main className="gallery-page">
-
-      {/* HERO */}
       <section className="gallery-hero">
         <div className="container hero-grid">
 
@@ -57,12 +50,12 @@ export default function Gallery() {
 
           <div className="hero-cards">
             <div className="hero-card reveal-right delay-1">
-              <strong>Campus</strong>
+              <strong>Campus</strong> <br/>
               <span>Life & Activities</span>
             </div>
 
             <div className="hero-card reveal-right delay-2">
-              <strong>Events</strong>
+              <strong>Events</strong><br/>  
               <span>Celebrations & Programs</span>
             </div>
           </div>
@@ -85,7 +78,10 @@ export default function Gallery() {
       <section className="gallery-content">
         <div className="container gallery-grid">
           {galleryImages.map((img, i) => (
-            <div key={i} className={`gallery-card reveal delay-${(i % 6) + 1}`}>
+            <div
+              key={i}
+              className={`gallery-card reveal delay-${(i % 6) + 1}`}
+            >
               <img
                 src={img}
                 alt={`School Gallery ${i + 1}`}
