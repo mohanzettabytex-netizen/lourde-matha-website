@@ -28,24 +28,25 @@ export default function StudentLife() {
     {
       tag: "Spiritual",
       title: "Spiritual Formation",
-      desc: "Daily prayer, moral instruction, and Christian values that nurture character and faith."
+      desc: "Daily prayer, moral instruction, and value-based guidance that nurture discipline, character, and inner growth."
     },
     {
       tag: "Sports",
       title: "Sports & Physical Training",
-      desc: "Encouraging fitness, teamwork, discipline, and sportsmanship through structured activities."
+      desc: "Karate and Silambam training along with structured physical activities that promote fitness, self-defense, and discipline."
     },
     {
       tag: "Culture",
-      title: "Cultural Activities",
-      desc: "Music, dance, drama, and literary competitions that encourage creativity and expression."
+      title: "Cultural & Club Activities",
+      desc: "Cultural activities include Karate, Silambam, and various club activities that encourage creativity, participation, and talent development."
     },
     {
       tag: "Leadership",
       title: "Leadership & Discipline",
-      desc: "Student councils and responsibility-based learning to develop confident leaders."
+      desc: "Leadership and discipline are fostered through the School Parliament for both Senior and Junior students, developing responsibility and democratic values."
     }
   ];
+
 
   return (
     <main className="studentlife-page">
@@ -61,19 +62,19 @@ export default function StudentLife() {
               Beyond Academics
             </h1>
             <p>
-              Student life at Lourde Matha Convent Hr. Sec. School
+              Student life at Lourde Matha Convent Matric Hr. Sec. School
               nurtures discipline, creativity, leadership, and faith.
             </p>
           </div>
 
           <div className="hero-cards">
             <div className="hero-card reveal-right delay-1">
-              <strong>Balanced</strong><br/>
+              <strong>Balanced</strong><br />
               <span>Mind & Body</span>
             </div>
 
             <div className="hero-card reveal-right delay-2">
-              <strong>Values</strong><br/>
+              <strong>Values</strong><br />
               <span>Faith & Discipline</span>
             </div>
           </div>

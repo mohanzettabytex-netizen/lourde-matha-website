@@ -127,11 +127,9 @@
 ================================ */
 .academics-values {
   padding: 110px 0;
-  background: linear-gradient(
-    135deg,
-    var(--primary-soft),
-    var(--white)
-  );
+  background: linear-gradient(135deg,
+      var(--primary-soft),
+      var(--white));
 }
 
 .values-grid {
@@ -192,6 +190,94 @@
 }
 
 /* ===============================
+   ACADEMIC TOPPERS
+================================ */
+.academics-toppers {
+  padding: 120px 0;
+  background:
+    radial-gradient(circle at top left, #ffedd5, transparent 60%),
+    var(--white);
+}
+
+.toppers-header {
+  text-align: center;
+  max-width: 720px;
+  margin: auto;
+  margin-bottom: 70px;
+}
+
+.toppers-header span {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--primary-deep);
+}
+
+.toppers-header h2 {
+  font-size: 2.4rem;
+  margin: 16px 0;
+}
+
+.toppers-header p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* GRID */
+.toppers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+}
+
+/* CARD */
+.topper-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  padding: 36px 28px;
+  border-radius: 26px;
+  text-align: center;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.topper-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.12);
+}
+
+/* PHOTO */
+.topper-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--primary-soft);
+  margin-bottom: 18px;
+}
+
+/* NAME */
+.topper-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+
+/* CLASS */
+.topper-card .class {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+/* MARKS */
+.topper-card strong {
+  font-size: 1.6rem;
+  color: var(--primary-deep);
+}
+
+
+/* ===============================
    RESPONSIVE
 ================================ */
 @media (max-width: 900px) {
@@ -231,7 +317,18 @@
 }
 
 /* STAGGER DELAYS */
-.academics .delay-1 { transition-delay: 0.15s; }
-.academics .delay-2 { transition-delay: 0.3s; }
-.academics .delay-3 { transition-delay: 0.45s; }
-.academics .delay-4 { transition-delay: 0.6s; }
+.academics .delay-1 {
+  transition-delay: 0.15s;
+}
+
+.academics .delay-2 {
+  transition-delay: 0.3s;
+}
+
+.academics .delay-3 {
+  transition-delay: 0.45s;
+}
+
+.academics .delay-4 {
+  transition-delay: 0.6s;
+}

@@ -22,7 +22,7 @@ const heroSlides = [
 
 const stats = [
   {
-    value: 25,
+    value: 20,
     suffix: "+",
     label: "Years of Excellence",
     to: "/about",
@@ -39,12 +39,12 @@ const stats = [
     label: "Awards",
     to: "/updates",
   },
-  {
-    value: 60,
-    suffix: "+",
-    label: "Alumini",
-    to: "/academics",
-  }
+  // {
+  //   value: 60,
+  //   suffix: "+",
+  //   label: "Alumini",
+  //   to: "/academics",
+  // }
 ];
 
 
@@ -124,7 +124,7 @@ export default function Home() {
         <div className="container hero-grid">
           <div className="hero-text">
             <span className="hero-badge">
-              Lourde Matha Convent Matriculation Higher Secondary School
+             Lourde Matha Convent Matric Hr. Sec. School
             </span>
 
             <h1>{heroSlides[active].title}</h1>

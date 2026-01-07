@@ -43,19 +43,18 @@ export default function Gallery() {
               Learning & Growth
             </h1>
             <p>
-              A glimpse into the vibrant life at Lourde Matha Convent
-              Hr. Sec. School — learning, celebrations, and memories.
+              A glimpse into the vibrant life at Lourde Matha Convent Matric Hr. Sec. School — learning, celebrations, and memories.
             </p>
           </div>
 
           <div className="hero-cards">
             <div className="hero-card reveal-right delay-1">
-              <strong>Campus</strong> <br/>
+              <strong>Campus</strong> <br />
               <span>Life & Activities</span>
             </div>
 
             <div className="hero-card reveal-right delay-2">
-              <strong>Events</strong><br/>  
+              <strong>Events</strong><br />
               <span>Celebrations & Programs</span>
             </div>
           </div>

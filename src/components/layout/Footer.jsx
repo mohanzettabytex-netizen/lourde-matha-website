@@ -28,9 +28,10 @@ export default function Footer() {
         {/* CONTACT */}
         <div className="footer-column">
           <h4>Contact</h4>
-          <p>Dhali Road, Udumalpet</p>
+          <p>Bodipatti (Post), Kuralkuttai Pirivu</p>
           <p>Office Hours: 9:00 AM – 4:00 PM</p>
-          <p>Email: info@lourdematha.edu</p>
+          <p>Phone –  9486616232</p>
+          <p>Email:  lmcm.school@gmail.com</p>
         </div>
 
       </div>
@@ -40,7 +41,7 @@ export default function Footer() {
 
       {/* BOTTOM */}
       <div className="footer-bottom">
-        © {new Date().getFullYear()} Lourde Matha Convent Matriculation Higher Secondary School.
+        © {new Date().getFullYear()} Lourde Matha Convent Matric Hr. Sec. School.
         All rights reserved.
       </div>
 

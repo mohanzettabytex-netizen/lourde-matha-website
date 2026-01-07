@@ -60,7 +60,7 @@ export default function Admissions() {
       <section className="academics-story reveal">
         <div className="container">
           <p>
-            At Lourde Matha Convent Hr. Sec. School, admissions are
+            At Lourde Matha Convent Matric Hr. Sec. School, admissions are
             conducted with transparency, discipline, and respect
             for every family seeking quality education.
           </p>

@@ -40,7 +40,7 @@ export default function Contact() {
             </h1>
 
             <p>
-              Reach out to Lourde Matha Convent Hr. Sec. School for
+              Reach out to Lourde Matha Convent Matric Hr. Sec. School for
               admissions, academic queries, or any assistance.
             </p>
           </div>

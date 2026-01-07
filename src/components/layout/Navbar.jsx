@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import logo from "../../Assets/Logo/logo.png";
 import "./Navbar.css";
 
 export default function Navbar() {
@@ -15,9 +16,13 @@ export default function Navbar() {
 
           {/* BRAND */}
           <div className="navbar-brand">
-            <h1>Lourde Matha</h1>
-            <span>Love • Knowledge • Service</span>
+            <img src={logo} alt="Lourde Matha Logo" className="brand-logo" />
+            <div className="brand-text">
+              <h1>Lourde Matha</h1>
+              <span>Love • Knowledge • Service</span>
+            </div>
           </div>
+
 
           {/* DESKTOP MENU */}
           <nav className="navbar-menu" aria-label="Primary Navigation">
@@ -27,9 +32,8 @@ export default function Navbar() {
             <NavLink to="/student-life">Student Life</NavLink>
             <NavLink to="/updates">Updates</NavLink>
             <NavLink to="/gallery">Gallery</NavLink>
+            <NavLink to="/rules">Rules</NavLink>
             <NavLink to="/admissions">Admissions</NavLink>
-
-            {/* PRIMARY CTA */}
             <NavLink to="/contact" className="nav-cta">
               Contact
             </NavLink>
@@ -55,10 +59,15 @@ export default function Navbar() {
 
         {/* MOBILE HEADER */}
         <div className="mobile-header">
-          <div className="mobile-brand">
-            <strong>Lourde Matha</strong>
-            <span>Love • Knowledge • Service</span>
+          {/* BRAND */}
+          <div className="navbar-brand">
+            <img src={logo} alt="Lourde Matha Logo" className="brand-logo" />
+            <div className="brand-text">
+              <h1>Lourde Matha</h1>
+              <span>Love • Knowledge • Service</span>
+            </div>
           </div>
+
 
           <button
             className="mobile-close"
@@ -76,6 +85,7 @@ export default function Navbar() {
           <NavLink onClick={closeMenu} to="/academics">Academics</NavLink>
           <NavLink onClick={closeMenu} to="/student-life">Student Life</NavLink>
           <NavLink onClick={closeMenu} to="/updates">Updates</NavLink>
+          <NavLink onClick={closeMenu} to="/rules">Rules</NavLink>
           <NavLink onClick={closeMenu} to="/gallery">Gallery</NavLink>
           <NavLink onClick={closeMenu} to="/admissions">Admissions</NavLink>
 

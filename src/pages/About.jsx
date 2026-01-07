@@ -37,7 +37,7 @@ export default function About() {
             <span className="hero-badge">About Our School</span>
             <h1>Educating Minds. Shaping Character.</h1>
             <p>
-              Lourde Matha Convent Hr. Sec. School is dedicated to nurturing
+              Lourde Matha Convent Matric Hr. Sec. School is dedicated to nurturing
               academic excellence, strong moral values, and confident leadership.
             </p>
           </div>
@@ -62,7 +62,7 @@ export default function About() {
       <section className="about-story reveal">
         <div className="container">
           <p>
-            At Lourde Matha Convent Hr. Sec. School, we believe education is not
+            At Lourde Matha Convent Matric Hr. Sec. School, we believe education is not
             merely about academic achievement, but about shaping responsible,
             compassionate, and capable individuals who contribute positively
             to society.
@@ -78,8 +78,8 @@ export default function About() {
             <span>Our Vision</span>
             <h2>Empowering Future Leaders</h2>
             <p>
-              To empower women and children through holistic education,
-              Christian formation, and lifelong learning.
+              We strive to empower women and children through Christian formation.
+              
             </p>
           </div>
 
@@ -87,8 +87,13 @@ export default function About() {
             <span>Our Mission</span>
             <h2>Educating with Purpose</h2>
             <p>
-              To nurture responsible citizens by imparting knowledge with
-              love, discipline, and moral integrity.
+              To educate children to become active and responsible citizens
+            </p>
+            <p>
+              To impact knowledge and wisdom with love and dedication
+            </p>
+            <p>
+              To mould christ like leaders who will transform the society
             </p>
           </div>
 

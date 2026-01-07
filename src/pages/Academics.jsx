@@ -61,7 +61,7 @@ export default function Academics() {
       <section className="academics-story reveal">
         <div className="container">
           <p>
-            At Lourde Matha Convent Hr. Sec. School, academics go beyond
+            At Lourde Matha Convent Matric Hr. Sec. School, academics go beyond
             textbooks. Our learning environment promotes discipline,
             conceptual understanding, and values-based education.
           </p>
@@ -85,8 +85,7 @@ export default function Academics() {
             <span>Instruction</span>
             <h2>Medium of Education</h2>
             <p>
-              English is the medium of instruction, with Tamil and Hindi
-              offered as additional languages.
+              English is the medium of instruction. Tamil, Hindi, and French are offered as second languages.
             </p>
           </div>
 
@@ -110,6 +109,48 @@ export default function Academics() {
 
         </div>
       </section>
+
+      {/* ACADEMIC TOPPERS */}
+      <section className="academics-toppers">
+        <div className="container">
+
+          <div className="toppers-header reveal">
+            <span>Academic Commitments</span>
+            <h2>School Toppers – 2024–25</h2>
+            <p>
+              Recognising outstanding academic excellence and consistent performance
+              achieved by our students.
+            </p>
+          </div>
+
+          <div className="toppers-grid">
+
+            {/* TOPPER CARD */}
+            <div className="topper-card reveal delay-1">
+              <img src="/images/topper1.jpg" alt="School Topper" />
+              <h3>Student Name</h3>
+              <p className="class">Class X</p>
+              <strong>495 / 500</strong>
+            </div>
+
+            <div className="topper-card reveal delay-2">
+              <img src="/images/topper2.jpg" alt="School Topper" />
+              <h3>Student Name</h3>
+              <p className="class">Class XII</p>
+              <strong>488 / 500</strong>
+            </div>
+
+            <div className="topper-card reveal delay-3">
+              <img src="/images/topper3.jpg" alt="School Topper" />
+              <h3>Student Name</h3>
+              <p className="class">Class IX</p>
+              <strong>482 / 500</strong>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
 
       {/* STATEMENT */}
       <section className="academics-statement reveal">

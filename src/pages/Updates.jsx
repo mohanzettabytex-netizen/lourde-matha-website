@@ -58,8 +58,7 @@ export default function Updates() {
             </h1>
             <p>
               Stay informed about important announcements,
-              events, and updates from Lourde Matha Convent
-              Hr. Sec. School.
+              events, and updates from Lourde Matha Convent Matric Hr. Sec. School
             </p>
           </div>
 
