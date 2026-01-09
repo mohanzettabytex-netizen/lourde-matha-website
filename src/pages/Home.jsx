@@ -1,15 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import heroImage1 from "../Assets/Gendral/1.jpeg";
+import heroImage2 from "../Assets/Gendral/2.jpeg";
 import "./Home.css";
 
 const heroSlides = [
   {
-    img: "https://images.unsplash.com/photo-1580582932707-520aed937b7b",
+    img: heroImage1,
     title: "Shaping Future Leaders",
     subtitle: "Faith • Discipline • Excellence"
   },
   {
-    img: "https://images.unsplash.com/photo-1596495577886-d920f1fb7238",
+    img: heroImage2,
     title: "Learning Beyond Classrooms",
     subtitle: "Academic & Moral Growth"
   },
@@ -32,7 +34,7 @@ const stats = [
     suffix: "+",
     label: "Students",
     to: "/student-life",
-  }, 
+  },
   {
     value: 15,
     suffix: "+",
@@ -124,7 +126,7 @@ export default function Home() {
         <div className="container hero-grid">
           <div className="hero-text">
             <span className="hero-badge">
-             Lourde Matha Convent Matric Hr. Sec. School
+              Lourde Matha Convent Matric Hr. Sec. School
             </span>
 
             <h1>{heroSlides[active].title}</h1>

@@ -1,4 +1,13 @@
 import { useEffect } from "react";
+import toper121 from "../Assets/Toppers/12-1.png";
+import toper122 from "../Assets/Toppers/12-2.png";
+import toper123 from "../Assets/Toppers/12-3.png";
+import toper124 from "../Assets/Toppers/12-4.png";
+import toper111 from "../Assets/Toppers/11-1.png";
+import toper112 from "../Assets/Toppers/11-2.png";
+import toper113 from "../Assets/Toppers/11-3.png";
+import toper211 from "../Assets/Toppers/10-1.png";
+import toper212 from "../Assets/Toppers/10-2.png";
 import "./Academics.css";
 
 export default function Academics() {
@@ -23,6 +32,26 @@ export default function Academics() {
     elements.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
+
+  const classXII = [
+    { img: toper121, name: "DEEKSHA A", rank: " Rank I" },
+    { img: toper122, name: "SHREE AKILA R", rank: "Rank II" },
+    { img: toper123, name: "MADHUMITHA K", rank: "Rank III" },
+    { img: toper124, name: "ASWIN T", rank: "Rank III" },
+  ];
+
+  const classXI = [
+    { img: toper111, name: "SHREE VITHGASELVI", rank: "Rank I" },
+    { img: toper112, name: "EZHIL S", rank: "Rank II" },
+    { img: toper113, name: "DANYA S", rank: "Rank III" },
+  ];
+
+  const classX = [
+    { img: toper211, name: "PRIYANKA B", rank: "Rank I" },
+    { img: toper212, name: "ABISHEK V P", rank: "Rank II" },
+  ];
+
+
 
   return (
     <main className="academics">
@@ -118,38 +147,79 @@ export default function Academics() {
             <span>Academic Commitments</span>
             <h2>School Toppers – 2024–25</h2>
             <p>
-              Recognising outstanding academic excellence and consistent performance
-              achieved by our students.
+              Recognising outstanding academic excellence and
+              consistent performance achieved by our students.
             </p>
           </div>
 
-          <div className="toppers-grid">
+          {/* ===== CLASS XII ===== */}
+          <div className="toppers-block">
+            <h3 className="toppers-title">Class XII</h3>
 
-            {/* TOPPER CARD */}
-            <div className="topper-card reveal delay-1">
-              <img src="/images/topper1.jpg" alt="School Topper" />
-              <h3>Student Name</h3>
-              <p className="class">Class X</p>
-              <strong>495 / 500</strong>
+            <div className="toppers-grid">
+              {classXII.map((student, index) => (
+                <div key={index} className="topper-card reveal">
+
+                  {/* RANK BADGE */}
+
+                  <div className="avatar">
+                    <img src={student.img} alt={`Class XII Topper ${student.name}`} />
+                  </div>
+
+                  <span className="rank-badge">{student.rank}</span>
+                  <h3>{student.name}</h3>
+                  <p className="class">Class XII</p>
+                </div>
+              ))}
             </div>
+          </div>
 
-            <div className="topper-card reveal delay-2">
-              <img src="/images/topper2.jpg" alt="School Topper" />
-              <h3>Student Name</h3>
-              <p className="class">Class XII</p>
-              <strong>488 / 500</strong>
+          {/* ===== CLASS XI ===== */}
+          <div className="toppers-block">
+            <h3 className="toppers-title">Class XI</h3>
+
+            <div className="toppers-grid">
+              {classXI.map((student, index) => (
+                <div key={index} className="topper-card reveal">
+
+
+                  <div className="avatar">
+                    <img src={student.img} alt={`Class XI Topper ${student.name}`} />
+                  </div>
+                  <span className="rank-badge">{student.rank}</span>
+
+                  <h3>{student.name}</h3>
+                  <p className="class">Class XI</p>
+                </div>
+              ))}
             </div>
+          </div>
 
-            <div className="topper-card reveal delay-3">
-              <img src="/images/topper3.jpg" alt="School Topper" />
-              <h3>Student Name</h3>
-              <p className="class">Class IX</p>
-              <strong>482 / 500</strong>
+
+
+          {/* ===== CLASS X ===== */}
+          <div className="toppers-block">
+            <h3 className="toppers-title">Class X</h3>
+
+            <div className="toppers-grid">
+              {classX.map((student, index) => (
+                <div key={index} className="topper-card reveal">
+
+
+                  <div className="avatar">
+                    <img src={student.img} alt={`Class X Topper ${student.name}`} />
+                  </div>
+                  <span className="rank-badge">{student.rank}</span>
+
+                  <h3>{student.name}</h3>
+                  <p className="class">Class X</p>
+                </div>
+              ))}
             </div>
-
           </div>
         </div>
       </section>
+
 
 
       {/* STATEMENT */}

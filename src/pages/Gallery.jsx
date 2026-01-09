@@ -2,11 +2,12 @@ import { useEffect } from "react";
 import "./Gallery.css";
 import { loadImagesFromFolder } from "../utils/loadImages";
 
-const galleryImages = loadImagesFromFolder([
-  "AnnualDay",
-  "Gendral",
-  "Christmas",
-]);
+const galleryCategories = {
+  "Annual Day": loadImagesFromFolder(["AnnualDay"]),
+  "Our Campus": loadImagesFromFolder(["Gendral"]),
+  "Christmas": loadImagesFromFolder(["Christmas"]),
+};
+
 
 export default function Gallery() {
 
@@ -75,21 +76,40 @@ export default function Gallery() {
 
       {/* GALLERY GRID */}
       <section className="gallery-content">
-        <div className="container gallery-grid">
-          {galleryImages.map((img, i) => (
-            <div
-              key={i}
-              className={`gallery-card reveal delay-${(i % 6) + 1}`}
-            >
-              <img
-                src={img}
-                alt={`School Gallery ${i + 1}`}
-                loading="lazy"
-              />
-            </div>
-          ))}
+        <div className="container">
+
+          {Object.entries(galleryCategories).map(
+            ([category, images], categoryIndex) => (
+              <div key={category} className="gallery-block">
+
+                {/* CATEGORY HEADER */}
+                <h3 className="gallery-title reveal">
+                  {category}
+                </h3>
+
+                {/* IMAGE GRID */}
+                <div className="gallery-grid">
+                  {images.map((img, i) => (
+                    <div
+                      key={i}
+                      className={`gallery-card reveal delay-${(i % 6) + 1}`}
+                    >
+                      <img
+                        src={img}
+                        alt={`${category} ${i + 1}`}
+                        loading="lazy"
+                      />
+                    </div>
+                  ))}
+                </div>
+
+              </div>
+            )
+          )}
+
         </div>
       </section>
+
 
       {/* COMMITMENT */}
       <section className="gallery-commitment reveal">

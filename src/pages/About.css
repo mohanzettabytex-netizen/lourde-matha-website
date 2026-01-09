@@ -1,3 +1,6 @@
+/* ===============================
+   ROOT VARIABLES
+================================ */
 :root {
   --primary: #fb923c;
   --primary-deep: #f97316;
@@ -9,11 +12,29 @@
 }
 
 /* ===============================
+   GLOBAL SAFETY (CRITICAL)
+================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* ===============================
    PAGE
 ================================ */
 .about {
   font-family: system-ui, -apple-system, BlinkMacSystemFont;
   color: var(--dark);
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 /* ===============================
@@ -25,19 +46,28 @@
     radial-gradient(circle at top right, #ffe7d1, transparent 60%),
     radial-gradient(circle at bottom left, #ffedd5, transparent 55%),
     var(--white);
+  overflow: hidden;
 }
 
+/* GRID */
 .hero-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 60px;
   align-items: center;
+  width: 100%;
 }
 
 /* TEXT */
+.hero-text {
+  max-width: 100%;
+}
+
 .hero-text h1 {
   font-size: clamp(2.8rem, 5vw, 4rem);
   margin-bottom: 16px;
+  line-height: 1.15;
+  word-break: break-word;
 }
 
 .hero-text p {
@@ -56,10 +86,13 @@
   margin-bottom: 14px;
 }
 
-/* FLOATING CARDS */
+/* ===============================
+   FLOATING CARDS
+================================ */
 .hero-cards {
   display: grid;
   gap: 22px;
+  width: 100%;
 }
 
 .hero-card {
@@ -68,6 +101,7 @@
   padding: 28px;
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  width: 100%;
 }
 
 .hero-card.accent {
@@ -109,8 +143,9 @@
 
 .values-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 36px;
+  width: 100%;
 }
 
 .value-glass {
@@ -119,6 +154,7 @@
   padding: 44px;
   border-radius: 26px;
   box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+  width: 100%;
 }
 
 .value-glass span {
@@ -161,27 +197,12 @@
 }
 
 /* ===============================
-   RESPONSIVE
-================================ */
-@media (max-width: 900px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .hero-text p {
-    margin: auto;
-  }
-}
-/* ===============================
-   ABOUT PAGE ANIMATIONS (SCOPED)
+   ANIMATIONS
 ================================ */
 .about .reveal {
   opacity: 0;
   transform: translateY(28px);
-  transition:
-    opacity 0.7s ease,
-    transform 0.7s ease;
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
 .about .reveal.is-visible {
@@ -189,13 +210,10 @@
   transform: translateY(0);
 }
 
-/* Slide from right (hero cards) */
 .about .reveal-right {
   opacity: 0;
   transform: translateX(40px);
-  transition:
-    opacity 0.7s ease,
-    transform 0.7s ease;
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
 .about .reveal-right.is-visible {
@@ -203,8 +221,104 @@
   transform: translateX(0);
 }
 
-/* Stagger delay helpers */
 .about .delay-1 { transition-delay: 0.1s; }
 .about .delay-2 { transition-delay: 0.2s; }
 .about .delay-3 { transition-delay: 0.3s; }
 .about .delay-4 { transition-delay: 0.4s; }
+
+/* ===============================
+   TABLET (≤ 900px)
+================================ */
+@media (max-width: 900px) {
+  .about-hero {
+    padding: 110px 0 90px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero-text p {
+    margin: auto;
+  }
+
+  .hero-cards {
+    max-width: 520px;
+    margin: auto;
+  }
+}
+
+/* ===============================
+   MOBILE (≤ 600px)
+================================ */
+@media (max-width: 600px) {
+  .about-hero {
+    padding: 90px 0 70px;
+  }
+
+  .hero-grid {
+    gap: 32px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .hero-card {
+    padding: 22px;
+  }
+
+  .about-story {
+    padding: 70px 0;
+  }
+
+  .about-values {
+    padding: 80px 0;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .value-glass {
+    padding: 28px;
+  }
+
+  .about-motto {
+    padding: 90px 0;
+  }
+}
+
+/* ===============================
+   SMALL MOBILE (≤ 400px)
+================================ */
+@media (max-width: 400px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-badge {
+    font-size: 0.65rem;
+  }
+
+  .value-glass h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* ===============================
+   TOUCH DEVICES – PREVENT OVERFLOW
+================================ */
+@media (hover: none) {
+  .hero-card,
+  .value-glass {
+    transform: none !important;
+  }
+}

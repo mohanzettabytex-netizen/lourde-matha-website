@@ -5,7 +5,7 @@ export default function Admissions() {
 
   useEffect(() => {
     const elements = document.querySelectorAll(
-      ".admissions-page .reveal, .admissions-page .reveal-right"
+      ".admissions .reveal, .admissions .reveal-right"
     );
 
     const observer = new IntersectionObserver(
@@ -25,10 +25,10 @@ export default function Admissions() {
   }, []);
 
   return (
-    <main className="admissions-page">
+    <main className="admissions">
 
       {/* HERO */}
-      <section className="academics-hero">
+      <section className="admissions-hero">
         <div className="container hero-grid">
 
           <div className="hero-text reveal">
@@ -57,7 +57,7 @@ export default function Admissions() {
       </section>
 
       {/* STORY */}
-      <section className="academics-story reveal">
+      <section className="admissions-story reveal">
         <div className="container">
           <p>
             At Lourde Matha Convent Matric Hr. Sec. School, admissions are
@@ -67,8 +67,8 @@ export default function Admissions() {
         </div>
       </section>
 
-      {/* STRUCTURE GRID */}
-      <section className="academics-structure">
+      {/* STRUCTURE */}
+      <section className="admissions-structure">
         <div className="container structure-grid">
 
           <div className="structure-card reveal delay-1">
@@ -110,8 +110,8 @@ export default function Admissions() {
         </div>
       </section>
 
-      {/* COMMITMENT */}
-      <section className="academics-statement reveal">
+      {/* STATEMENT */}
+      <section className="admissions-statement reveal">
         <div className="container">
           <h2>Our Admission Commitment</h2>
           <p>Transparency • Fairness • Care</p>
