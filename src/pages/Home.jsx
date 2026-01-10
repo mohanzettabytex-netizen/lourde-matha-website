@@ -22,6 +22,21 @@ const heroSlides = [
   }
 ];
 
+const chavaraQuotes = [
+  "Children, you are God’s investment in the hands of your parents.",
+  "Those who love God will love and respect their parents.",
+  "Trust your mother; God listens to a mother’s prayer like a child’s cry.",
+  "Wisdom and purity are the spiritual food for true growth.",
+  "Go to school regularly and teach your mind discipline.",
+  "Laziness fosters evil habits.",
+  "Let your friends be those who love God.",
+  "Good friends will make you good.",
+  "Bad books are like fire hidden in straw.",
+  "Regular reading of good books illumines the mind.",
+  "Let there be no day in your life in which you do no good to others."
+];
+
+
 const stats = [
   {
     value: 20,
@@ -52,8 +67,16 @@ const stats = [
 
 export default function Home() {
   const [active, setActive] = useState(0);
+  const [quoteIndex, setQuoteIndex] = useState(0);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setQuoteIndex((prev) => (prev + 1) % chavaraQuotes.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(
@@ -126,11 +149,14 @@ export default function Home() {
         <div className="container hero-grid">
           <div className="hero-text">
             <span className="hero-badge">
-              Lourde Matha Convent Matric Hr. Sec. School
+              Lourdes Matha Convent Matric Hr. Sec. School
             </span>
 
             <h1>{heroSlides[active].title}</h1>
             <p>{heroSlides[active].subtitle}</p>
+
+            {/* INLINE QUOTE SCROLLER */}
+
 
             <div className="hero-actions">
               <a href="/about" className="btn-primary">Explore School</a>
@@ -139,6 +165,15 @@ export default function Home() {
           </div>
 
           <div className="hero-cards">
+
+            <div className="quote-scroller">
+              <span className="quote-label">Message of St. Chavara</span>
+              <div className="quote-window">
+                <p key={quoteIndex} className="quote-text">
+                  “{chavaraQuotes[quoteIndex]}”
+                </p>
+              </div>
+            </div>
             {stats.slice(0, 2).map((s) => (
               <div key={s.label} className="hero-card">
                 <strong>{s.value}</strong>

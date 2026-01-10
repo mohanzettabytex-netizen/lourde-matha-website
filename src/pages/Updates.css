@@ -13,7 +13,7 @@
 .updates-page .updates-hero {
   position: relative;
   min-height: 100vh;
-  padding: 140px 0 120px;
+  padding: 100px 0 100px;
   background:
     radial-gradient(circle at top right, #ffe7d1, transparent 60%),
     radial-gradient(circle at bottom left, #ffedd5, transparent 55%),

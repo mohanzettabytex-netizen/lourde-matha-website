@@ -13,7 +13,7 @@
 .home-page .home-hero {
   position: relative;
   min-height: 100vh;
-  padding: 140px 0 120px;
+  padding: 100px 0 100px;
   background:
     radial-gradient(circle at top right, #ffe7d1, transparent 60%),
     radial-gradient(circle at bottom left, #ffedd5, transparent 55%),
@@ -90,7 +90,7 @@
   gap: 16px;
 }
 
- 
+
 .home-page .hero-cards {
   display: grid;
   gap: 22px;
@@ -117,11 +117,71 @@
   min-width: 70px;
 }
 
+/* ===============================
+   ST. CHAVARA QUOTE SCROLLER
+================================ */
+.quote-scroller {
+  margin-top: 28px;
+  padding: 18px 22px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  max-width: 520px;
+}
+
+.quote-label {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--primary-deep);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.quote-window {
+  height: 72px;
+  overflow: hidden;
+}
+
+.quote-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--dark);
+  animation: quoteFadeSlide 0.6s ease;
+}
+
+@keyframes quoteFadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .quote-window {
+    height: auto;
+  }
+
+  .quote-text {
+    font-size: 0.95rem;
+  }
+}
+
+
 .home-page .hero-card span {
   font-size: 0.95rem;
   color: var(--muted);
   line-height: 1.4;
 }
+
 .hero-stats {
   display: grid;
   gap: 24px;
@@ -132,7 +192,7 @@
   backdrop-filter: blur(10px);
   padding: 26px;
   border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 .hero-stats strong {
