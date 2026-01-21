@@ -1,7 +1,76 @@
 import { useEffect } from "react";
+
+//
+/* PEOPLE & LEADERSHIP */
+import correspondent from "../Assets/About/prins-1.jpg";
+
+import principal1 from "../Assets/About/prins-2.jpg";
+import principal2 from "../Assets/About/prins-1.jpg";
+
+import teachersGroup from "../Assets/About/techgrp-1.jpg";
+
+import office1 from "../Assets/About/prins-1.jpg";
+import office2 from "../Assets/About/prins-2.jpg";
+
+import caretaker1 from "../Assets/About/techgrp-1.jpg";
+import caretaker2 from "../Assets/About/techgrp-1.jpg";
+
+import award1 from "../Assets/About/prins-1.jpg";
+import award2 from "../Assets/About/prins-2.jpg";
+
+import seminar1 from "../Assets/About/techgrp-1.jpg";
+import seminar2 from "../Assets/About/techgrp-1.jpg";
+
+//
 import "./About.css";
 
 export default function About() {
+
+  const peopleSections = [
+    {
+      title: "Correspondent",
+      subtitle: "Guiding Vision",
+      desc: "Sr. Roney provides spiritual leadership and guidance that shapes the vision and mission of our institution.",
+      images: [correspondent],
+    },
+    {
+      title: "Principal",
+      subtitle: "Leadership Icons",
+      desc: "Dynamic leadership that nurtures academic excellence, discipline, and holistic development.",
+      images: [principal1, principal2],
+    },
+    {
+      title: "Moulding Hands",
+      subtitle: "Our Teaching Faculty",
+      desc: "Dedicated teachers who inspire, guide, and mould young minds with care and commitment.",
+      images: [teachersGroup],
+    },
+    {
+      title: "Monitoring Centre",
+      subtitle: "Office & Administration",
+      desc: "Efficient administrative and office staff ensuring smooth academic and institutional operations.",
+      images: [office1, office2],
+    },
+    {
+      title: "Without You, Nothing",
+      subtitle: "Our Care Takers",
+      desc: "Support staff who maintain a safe, clean, and nurturing environment for every child.",
+      images: [caretaker1, caretaker2],
+    },
+    {
+      title: "Teachers Awards",
+      subtitle: "Recognising Excellence",
+      desc: "Celebrating the dedication and achievements of our teachers through awards and recognitions.",
+      images: [award1, award2],
+    },
+    {
+      title: "Updation & Ongoing Training",
+      subtitle: "Seminars & Workshops",
+      desc: "Continuous professional development through seminars for parents, teachers, and students.",
+      images: [seminar1, seminar2],
+    },
+  ];
+
 
   useEffect(() => {
     const elements = document.querySelectorAll(
@@ -58,6 +127,40 @@ export default function About() {
         </div>
       </section>
 
+      {/* PEOPLE & LEADERSHIP */}
+      <section className="about-people">
+        <div className="container">
+
+          <div className="people-header reveal">
+            <span>Our Strength</span>
+            <h2>People & Leadership</h2>
+            <p>
+              Behind every successful institution is a dedicated team of leaders,
+              educators, and support staff working together with commitment and care.
+            </p>
+          </div>
+
+          {peopleSections.map((section, index) => (
+            <div key={index} className="people-block">
+              <div className="people-text reveal">
+                <span>{section.subtitle}</span>
+                <h3>{section.title}</h3>
+                <p>{section.desc}</p>
+              </div>
+
+              <div className="people-grid">
+                {section.images.map((img, i) => (
+                  <div key={i} className="people-card reveal">
+                    <img src={img} alt={section.title} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+
+        </div>
+      </section> 
+
       {/* STORY */}
       <section className="about-story reveal">
         <div className="container">
@@ -79,7 +182,7 @@ export default function About() {
             <h2>Empowering Future Leaders</h2>
             <p>
               We strive to empower women and children through Christian formation.
-              
+
             </p>
           </div>
 

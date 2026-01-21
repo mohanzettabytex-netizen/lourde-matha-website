@@ -9,6 +9,7 @@ import Rules from "../pages/Rules";
 import Admissions from "../pages/Admissions";
 import Gallery from "../pages/Gallery";
 import Contact from "../pages/Contact";
+import Sports from "../pages/Sports";
 
 export default function AppRouter() {
   return (
@@ -17,6 +18,7 @@ export default function AppRouter() {
       <Route path="/about" element={<About />} />
       <Route path="/academics" element={<Academics />} />
       <Route path="/student-life" element={<StudentLife />} />
+      <Route path="/sports" element={<Sports/>} />
       <Route path="/updates" element={<Updates />} />
       <Route path="/rules" element={<Rules />} />
       <Route path="/admissions" element={<Admissions />} />

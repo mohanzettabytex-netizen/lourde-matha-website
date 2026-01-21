@@ -192,7 +192,7 @@ export default function Rules() {
             </div>
 
             <div className="hero-card accent reveal-right delay-2">
-              <h3>Parent Partnership</h3>
+              <h3>Parent Cooperation</h3>
               <p>Shared responsibility between school and home.</p>
             </div>
           </div>

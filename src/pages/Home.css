@@ -93,9 +93,11 @@
 
 .home-page .hero-cards {
   display: grid;
-  gap: 22px;
-  animation: fadeRight 0.9s ease forwards;
+  grid-template-rows: auto auto;
+  gap: 28px;
+  align-content: center;
 }
+
 
 .home-page .hero-card {
   display: flex;
@@ -117,18 +119,36 @@
   min-width: 70px;
 }
 
+.hero-quotes {
+  display: grid;
+  gap: 18px;
+}
+
+.hero-stats-inline {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
 /* ===============================
    ST. CHAVARA QUOTE SCROLLER
 ================================ */
 .quote-scroller {
-  margin-top: 28px;
-  padding: 18px 22px;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.65);
+  padding: 16px 20px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-  max-width: 520px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+  max-width: 100%;
 }
+.quote-scroller.chavara {
+  border-left: 4px solid #ffffff;
+}
+
+.quote-scroller.word-of-god {
+  border-left: 4px solid #ffffff;
+}
+
 
 .quote-label {
   display: block;
@@ -463,19 +483,16 @@
 @media (max-width: 900px) {
   .home-page .hero-grid {
     grid-template-columns: 1fr;
+    gap: 48px;
     text-align: center;
   }
 
-  .home-page .hero-text p {
-    margin: auto;
-  }
-
-  .home-page .hero-cards {
+  .hero-quotes,
+  .hero-stats-inline {
     grid-template-columns: 1fr;
   }
 
   .home-page .hero-actions {
     justify-content: center;
-    flex-direction: column;
   }
 }

@@ -34,6 +34,7 @@ export default function Navbar() {
             <NavLink to="/gallery">Gallery</NavLink>
             <NavLink to="/rules">Rules</NavLink>
             <NavLink to="/admissions">Admissions</NavLink>
+            <NavLink to="/sports">Sports</NavLink>
             <NavLink to="/contact" className="nav-cta">
               Contact
             </NavLink>
@@ -84,6 +85,7 @@ export default function Navbar() {
           <NavLink onClick={closeMenu} to="/about">About</NavLink>
           <NavLink onClick={closeMenu} to="/academics">Academics</NavLink>
           <NavLink onClick={closeMenu} to="/student-life">Student Life</NavLink>
+          <NavLink onClick={closeMenu} to="/sports">Sports</NavLink>
           <NavLink onClick={closeMenu} to="/updates">Updates</NavLink>
           <NavLink onClick={closeMenu} to="/rules">Rules</NavLink>
           <NavLink onClick={closeMenu} to="/gallery">Gallery</NavLink>

@@ -28,24 +28,30 @@ export default function StudentLife() {
     {
       tag: "Spiritual",
       title: "Spiritual Formation",
-      desc: "Daily prayer, moral instruction, and value-based guidance that nurture discipline, character, and inner growth."
+      desc: "Daily prayer, moral instruction, and value-based guidance that nurture discipline, character, faith, and inner growth among students."
     },
     {
-      tag: "Sports",
+      tag: "Language",
+      title: "Language & Communication Skills",
+      desc: "Spoken English and handwriting training that enhance communication skills, confidence, clarity, and overall academic performance."
+    },
+    {
+      tag: "Physical",
       title: "Sports & Physical Training",
-      desc: "Karate and Silambam training along with structured physical activities that promote fitness, self-defense, and discipline."
+      desc: "Yoga, Karate, and Silambam training along with structured physical activities that promote fitness, flexibility, self-discipline, and self-defense."
     },
     {
-      tag: "Culture",
-      title: "Cultural & Club Activities",
-      desc: "Cultural activities include Karate, Silambam, and various club activities that encourage creativity, participation, and talent development."
+      tag: "Arts",
+      title: "Arts & Creative Activities",
+      desc: "Drawing and instrumental music classes that encourage creativity, artistic expression, rhythm, and appreciation of culture."
     },
     {
       tag: "Leadership",
       title: "Leadership & Discipline",
-      desc: "Leadership and discipline are fostered through the School Parliament for both Senior and Junior students, developing responsibility and democratic values."
+      desc: "Leadership and discipline are fostered through the School Parliament for both Senior and Junior students, developing responsibility, confidence, and democratic values."
     }
   ];
+
 
 
   return (

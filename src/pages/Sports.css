@@ -1,0 +1,119 @@
+/* ===============================
+   SPORTS PAGE (MATCH ACADEMICS)
+================================ */
+.sports {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+  color: var(--dark);
+}
+
+/* ===============================
+   HERO (same as Academics)
+================================ */
+.sports-hero {
+  padding: 120px 0 100px;
+  background: linear-gradient(135deg, var(--primary-soft), #ffffff);
+}
+
+.sports .hero-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+/* ===============================
+   SPORTS BLOCK (KEY FIX)
+================================ */
+.sports-block {
+  padding: 100px 0; /* SAME as academics sections */
+}
+
+.sports-block:nth-child(even) {
+  background: linear-gradient(135deg, var(--primary-soft), #ffffff);
+}
+
+/* ===============================
+   SECTION HEADER
+================================ */
+.sports-header {
+  max-width: 760px;
+  margin-bottom: 48px; /* FIXED GAP */
+}
+
+.sports-header h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.sports-header p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* ===============================
+   GRID (MATCH TOPPERS GRID)
+================================ */
+.sports-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px; /* SAME as toppers-grid */
+}
+
+/* ===============================
+   IMAGE CARD
+================================ */
+.sports-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12);
+}
+
+.sports-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.sports-card:hover img {
+  transform: scale(1.08);
+}
+
+/* ===============================
+   STATEMENT (MATCH ACADEMICS)
+================================ */
+.sports-statement {
+  padding: 120px 0;
+  text-align: center;
+  background: linear-gradient(135deg,
+      var(--primary),
+      var(--primary-deep));
+  color: white;
+}
+
+.sports-statement h3 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+
+.sports-statement strong {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+/* ===============================
+   RESPONSIVE (SAME BREAKPOINTS)
+================================ */
+@media (max-width: 900px) {
+  .sports .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+  }
+
+  .sports-header {
+    text-align: center;
+    margin: 0 auto 40px;
+  }
+}
