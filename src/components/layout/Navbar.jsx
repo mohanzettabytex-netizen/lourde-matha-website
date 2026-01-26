@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../Assets/Logo/logo.png";
 import "./Navbar.css";
@@ -7,6 +7,19 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const closeMenu = () => setOpen(false);
+
+  useEffect(() => {
+    if (open) {
+      document.body.classList.add("mobile-menu-open");
+    } else {
+      document.body.classList.remove("mobile-menu-open");
+    }
+
+    return () => {
+      document.body.classList.remove("mobile-menu-open");
+    };
+  }, [open]);
+
 
   return (
     <>

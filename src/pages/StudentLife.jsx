@@ -116,7 +116,7 @@ export default function StudentLife() {
       <section className="studentlife-commitment reveal">
         <div className="container">
           <h2>Shaping Well-Rounded Individuals</h2>
-          <p>Faith • Discipline • Leadership</p>
+          <strong>Faith • Discipline • Leadership</strong>
         </div>
       </section>
 

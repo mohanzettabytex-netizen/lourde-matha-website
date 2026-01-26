@@ -105,7 +105,7 @@ export default function Updates() {
       <section className="updates-commitment reveal">
         <div className="container">
           <h2>Stay Connected With Us</h2>
-          <p>Communication • Awareness • Engagement</p>
+          <strong>Communication • Awareness • Engagement</strong>
         </div>
       </section>
 

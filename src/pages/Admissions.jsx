@@ -114,7 +114,7 @@ export default function Admissions() {
       <section className="admissions-statement reveal">
         <div className="container">
           <h2>Our Admission Commitment</h2>
-          <p>Transparency • Fairness • Care</p>
+          <strong>Transparency • Fairness • Care</strong>
         </div>
       </section>
 

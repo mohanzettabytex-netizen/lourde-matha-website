@@ -1,30 +1,26 @@
-import { useEffect } from "react";
-
-//
-/* PEOPLE & LEADERSHIP */
-import correspondent from "../Assets/About/prins-1.jpg";
-
-import principal1 from "../Assets/About/prins-2.jpg";
-import principal2 from "../Assets/About/prins-1.jpg";
-
-import teachersGroup from "../Assets/About/techgrp-1.jpg";
-
-import office1 from "../Assets/About/prins-1.jpg";
-import office2 from "../Assets/About/prins-2.jpg";
-
-import caretaker1 from "../Assets/About/techgrp-1.jpg";
-import caretaker2 from "../Assets/About/techgrp-1.jpg";
-
-import award1 from "../Assets/About/prins-1.jpg";
-import award2 from "../Assets/About/prins-2.jpg";
-
-import seminar1 from "../Assets/About/techgrp-1.jpg";
-import seminar2 from "../Assets/About/techgrp-1.jpg";
-
-//
+import { useEffect, useState } from "react";
 import "./About.css";
 
+/* PEOPLE & LEADERSHIP IMAGES */
+import correspondent from "../Assets/About/prins-1.jpg";
+import principal1 from "../Assets/About/prins-2.jpg";
+import teachersGroup from "../Assets/About/techgrp-1.jpg";
+import monOff1 from "../Assets/About/monitoring-1.jpg";
+import withoutu from "../Assets/About/withoutyou1.jpeg";
+import jursnrmeet from "../Assets/About/ong1.jpg";
+
+/* AUTO LOAD TEACHER AWARDS (ta1 → ta33) */
+const importAll = (context) =>
+  context.keys().map(context);
+
+const awardImages = importAll(
+  require.context("../Assets/About", false, /^\.\/t\d+\.jpg$/)
+).sort((a, b) =>
+  a.localeCompare(b, undefined, { numeric: true })
+);
+
 export default function About() {
+  const [expandedSections, setExpandedSections] = useState({});
 
   const peopleSections = [
     {
@@ -37,7 +33,7 @@ export default function About() {
       title: "Principal",
       subtitle: "Leadership Icons",
       desc: "Dynamic leadership that nurtures academic excellence, discipline, and holistic development.",
-      images: [principal1, principal2],
+      images: [principal1],
     },
     {
       title: "Moulding Hands",
@@ -49,29 +45,29 @@ export default function About() {
       title: "Monitoring Centre",
       subtitle: "Office & Administration",
       desc: "Efficient administrative and office staff ensuring smooth academic and institutional operations.",
-      images: [office1, office2],
+      images: [monOff1],
     },
     {
       title: "Without You, Nothing",
       subtitle: "Our Care Takers",
       desc: "Support staff who maintain a safe, clean, and nurturing environment for every child.",
-      images: [caretaker1, caretaker2],
+      images: [withoutu],
     },
     {
       title: "Teachers Awards",
       subtitle: "Recognising Excellence",
       desc: "Celebrating the dedication and achievements of our teachers through awards and recognitions.",
-      images: [award1, award2],
+      images: awardImages,
     },
     {
       title: "Updation & Ongoing Training",
       subtitle: "Seminars & Workshops",
       desc: "Continuous professional development through seminars for parents, teachers, and students.",
-      images: [seminar1, seminar2],
+      images: [jursnrmeet],
     },
   ];
 
-
+  /* INTERSECTION OBSERVER (STATIC CONTENT ONLY) */
   useEffect(() => {
     const elements = document.querySelectorAll(
       ".about .reveal, .about .reveal-right"
@@ -90,18 +86,56 @@ export default function About() {
     );
 
     elements.forEach((el) => observer.observe(el));
-
     return () => observer.disconnect();
   }, []);
+
+  /* IMAGE GRID RENDER (SAFE FOR SEE MORE) */
+  const renderImages = (images, sectionIndex) => {
+    const isExpanded = expandedSections[sectionIndex];
+
+    return (
+      <div className="people-grid">
+        {/* COLLAPSED VIEW */}
+        {!isExpanded &&
+          images.slice(0, 3).map((img, i) => (
+            <div key={i} className="people-card">
+              <img src={img} alt={`people-${i}`} />
+            </div>
+          ))}
+
+        {/* SEE MORE CARD (4TH SLOT) */}
+        {!isExpanded && images.length > 4 && (
+          <div
+            className="people-card see-more"
+            onClick={() =>
+              setExpandedSections((prev) => ({
+                ...prev,
+                [sectionIndex]: true,
+              }))
+            }
+          >
+            <span>+{images.length - 3}</span>
+            <p>See More</p>
+          </div>
+        )}
+
+        {/* EXPANDED VIEW */}
+        {isExpanded &&
+          images.map((img, i) => (
+            <div key={i} className="people-card">
+              <img src={img} alt={`people-expanded-${i}`} />
+            </div>
+          ))}
+      </div>
+    );
+  };
 
   return (
     <main className="about">
 
-      {/* HERO – SPLIT LAYOUT */}
+      {/* HERO */}
       <section className="about-hero">
         <div className="container hero-grid">
-
-          {/* LEFT CONTENT */}
           <div className="hero-text reveal">
             <span className="hero-badge">About Our School</span>
             <h1>Educating Minds. Shaping Character.</h1>
@@ -111,7 +145,6 @@ export default function About() {
             </p>
           </div>
 
-          {/* RIGHT FLOATING CARDS */}
           <div className="hero-cards">
             <div className="hero-card reveal-right delay-1">
               <h3>Founded on Faith</h3>
@@ -123,14 +156,12 @@ export default function About() {
               <p>Consistent results and holistic development.</p>
             </div>
           </div>
-
         </div>
       </section>
 
       {/* PEOPLE & LEADERSHIP */}
       <section className="about-people">
         <div className="container">
-
           <div className="people-header reveal">
             <span>Our Strength</span>
             <h2>People & Leadership</h2>
@@ -148,58 +179,9 @@ export default function About() {
                 <p>{section.desc}</p>
               </div>
 
-              <div className="people-grid">
-                {section.images.map((img, i) => (
-                  <div key={i} className="people-card reveal">
-                    <img src={img} alt={section.title} />
-                  </div>
-                ))}
-              </div>
+              {renderImages(section.images, index)}
             </div>
           ))}
-
-        </div>
-      </section> 
-
-      {/* STORY */}
-      <section className="about-story reveal">
-        <div className="container">
-          <p>
-            At Lourde Matha Convent Matric Hr. Sec. School, we believe education is not
-            merely about academic achievement, but about shaping responsible,
-            compassionate, and capable individuals who contribute positively
-            to society.
-          </p>
-        </div>
-      </section>
-
-      {/* VISION & MISSION */}
-      <section className="about-values">
-        <div className="container values-grid">
-
-          <div className="value-glass reveal delay-1">
-            <span>Our Vision</span>
-            <h2>Empowering Future Leaders</h2>
-            <p>
-              We strive to empower women and children through Christian formation.
-
-            </p>
-          </div>
-
-          <div className="value-glass reveal delay-2">
-            <span>Our Mission</span>
-            <h2>Educating with Purpose</h2>
-            <p>
-              To educate children to become active and responsible citizens
-            </p>
-            <p>
-              To impact knowledge and wisdom with love and dedication
-            </p>
-            <p>
-              To mould christ like leaders who will transform the society
-            </p>
-          </div>
-
         </div>
       </section>
 

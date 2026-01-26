@@ -115,7 +115,7 @@ export default function Gallery() {
       <section className="gallery-commitment reveal">
         <div className="container">
           <h2>Life at Lourde Matha</h2>
-          <p>Learning • Celebration • Growth</p>
+          <strong>Learning • Celebration • Growth</strong>
         </div>
       </section>
 
