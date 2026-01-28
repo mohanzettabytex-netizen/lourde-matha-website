@@ -20,20 +20,20 @@ import aiTraining from "../Assets/Facilities/fac-3.jpg";
 //
 
 /* LAB IMAGES */
-import physics1 from "../Assets/Labs/pys-1.jpeg";
-import physics2 from "../Assets/Labs/pys-2.jpeg";
+import physics1 from "../Assets/Labs/language1.jpg";
+import physics2 from "../Assets/Labs/language1.jpg";
 
-import chemistry1 from "../Assets/Labs/pys-1.jpeg";
-import chemistry2 from "../Assets/Labs/pys-1.jpeg";
+import chemistry1 from "../Assets/Labs/chelab1.jpeg";
+import chemistry2 from "../Assets/Labs/chelab2.jpeg";
 
-import biology1 from "../Assets/Labs/bio-1.jpeg";
-import biology2 from "../Assets/Labs/bio-2.jpeg";
+import biology1 from "../Assets/Labs/biolab1.jpeg";
+import biology2 from "../Assets/Labs/biolab2.jpeg";
 
-import csSenior1 from "../Assets/Labs/bio-1.jpeg";
-import csSenior2 from "../Assets/Labs/bio-2.jpeg";
+import csSenior1 from "../Assets/Labs/cslab3.jpg";
+import csSenior2 from "../Assets/Labs/cslab5.jpg";
 
-import csJunior1 from "../Assets/Labs/lib-1.jpeg";
-import csJunior2 from "../Assets/Labs/lib-2.jpeg";
+import csJunior1 from "../Assets/Labs/childlab1.jpg";
+import csJunior2 from "../Assets/Labs/childlab2.jpg";
 
 
 import "./Academics.css";

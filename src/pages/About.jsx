@@ -2,19 +2,19 @@ import { useEffect, useState } from "react";
 import "./About.css";
 
 /* PEOPLE & LEADERSHIP IMAGES */
-import correspondent from "../Assets/About/prins-1.jpg";
-import principal1 from "../Assets/About/prins-2.jpg";
-import teachersGroup from "../Assets/About/techgrp-1.jpg";
-import monOff1 from "../Assets/About/monitoring-1.jpg";
-import withoutu from "../Assets/About/withoutyou1.jpeg";
-import jursnrmeet from "../Assets/About/ong1.jpg";
+import correspondent from "../Assets/About/correspondent1.jpg";
+import principal1 from "../Assets/About/principa.jpg";
+import teachersGroup from "../Assets/About/staffgroup.jpg";
+import monOff1 from "../Assets/About/montoring-1.jpg";
+import withoutu from "../Assets/About/withoutu1.jpeg";
+import jursnrmeet from "../Assets/About/JrMeet.jpg";
 
 /* AUTO LOAD TEACHER AWARDS (ta1 → ta33) */
 const importAll = (context) =>
   context.keys().map(context);
 
 const awardImages = importAll(
-  require.context("../Assets/About", false, /^\.\/t\d+\.jpg$/)
+  require.context("../Assets/About/staffawards/", false, /^\.\/ta\d+\.jpg$/)
 ).sort((a, b) =>
   a.localeCompare(b, undefined, { numeric: true })
 );
