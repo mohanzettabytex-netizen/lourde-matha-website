@@ -291,7 +291,7 @@ function Stat({ value, suffix, label }) {
         </div>
       </section>
 
-      {/* STATS */}
+      {/* STATS */} 
       <section className="home-stats">
         <div className="container stats-grid">
           {stats.map((s) => (
