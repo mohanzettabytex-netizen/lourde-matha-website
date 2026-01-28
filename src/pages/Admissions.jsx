@@ -41,15 +41,16 @@ export default function Admissions() {
             </p>
           </div>
 
-          <div className="hero-stats">
+        
+          <div className="hero-cards">
             <div className="hero-card reveal-right delay-1">
-              <strong>Open</strong>
-              <span>All Communities</span>
+              <h3>Admission Process</h3>
+              <p>Clear and simple steps for student enrollment.</p>
             </div>
 
-            <div className="hero-card reveal-right delay-2">
-              <strong>Guided</strong>
-              <span>Admission Support</span>
+            <div className="hero-card accent reveal-right delay-2">
+              <h3>Eligibility Criteria</h3>
+              <p>Age and academic requirements for admission.</p>
             </div>
           </div>
 

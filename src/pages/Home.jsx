@@ -108,46 +108,59 @@ export default function Home() {
   }, []);
 
 
-  function Stat({ value, suffix, label }) {
-    const [count, setCount] = useState(0);
-    const ref = useRef(null);
-    const hasRun = useRef(false);
+function Stat({ value, suffix, label }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
 
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting && !hasRun.current) {
-            hasRun.current = true;
+  useEffect(() => {
+    const alreadyRun = sessionStorage.getItem("statsAnimated");
 
-            let start = 0;
-            const duration = 2000;
-            const increment = Math.ceil(value / (duration / 16));
+    // 👉 If animation already ran, show final value immediately
+    if (alreadyRun) {
+      setCount(value);
+      return;
+    }
 
-            const counter = setInterval(() => {
-              start += increment;
-              if (start >= value) {
-                setCount(value);
-                clearInterval(counter);
-              } else {
-                setCount(start);
-              }
-            }, 16);
-          }
-        },
-        { threshold: 0.4 }
-      );
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          sessionStorage.setItem("statsAnimated", "true");
 
-      if (ref.current) observer.observe(ref.current);
-      return () => observer.disconnect();
-    }, [value]);
+          let start = 0;
+          const duration = 2000;
+          const increment = Math.ceil(value / (duration / 16));
 
-    return (
-      <div ref={ref} className="stat">
-        <strong>{count}{suffix}</strong>
-        <span>{label}</span>
-      </div>
+          const counter = setInterval(() => {
+            start += increment;
+            if (start >= value) {
+              setCount(value); // ✅ final value locked
+              clearInterval(counter);
+            } else {
+              setCount(start);
+            }
+          }, 16);
+
+          observer.disconnect(); // run only once
+        }
+      },
+      { threshold: 0.4 }
     );
-  }
+
+    if (ref.current) observer.observe(ref.current);
+
+    return () => observer.disconnect();
+  }, [value]);
+
+ return (
+  <div ref={ref} className="stat">
+    <strong>{count}{suffix}</strong>
+    <span>{label}</span>
+  </div>
+);
+
+}
+
+
 
 
   return (
@@ -181,7 +194,7 @@ export default function Home() {
 
             <div className="hero-actions">
               <a href="/about" className="btn-primary">Explore School</a>
-              <a href="/admissions" className="btn-outline">Admissions</a>
+              <a href="/admissions" className="btn-primary">Admissions</a>
             </div>
           </div>
 

@@ -73,7 +73,7 @@ export default function StudentLife() {
             </p>
           </div>
 
-          <div className="hero-cards">
+          {/* <div className="hero-cards">
             <div className="hero-card reveal-right delay-1">
               <strong>Balanced</strong><br />
               <span>Mind & Body</span>
@@ -82,6 +82,18 @@ export default function StudentLife() {
             <div className="hero-card reveal-right delay-2">
               <strong>Values</strong><br />
               <span>Faith & Discipline</span>
+            </div>
+          </div> */}
+
+          <div className="hero-cards">
+            <div className="hero-card reveal-right delay-1">
+              <h3>Value-Based Learning</h3>
+              <p>Instilling moral values, discipline, and responsibility.</p>
+            </div>
+
+            <div className="hero-card accent reveal-right delay-2">
+              <h3>Creative Expression</h3>
+              <p>Opportunities in arts, culture, and extracurricular activities.</p>
             </div>
           </div>
 

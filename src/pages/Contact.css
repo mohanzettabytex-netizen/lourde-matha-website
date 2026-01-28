@@ -16,7 +16,7 @@
 .contact-page {
   font-family: system-ui, -apple-system, BlinkMacSystemFont;
   color: var(--dark);
-  overflow-x: hidden;
+  overflow: visible;
 }
 
 /* ===============================
@@ -25,6 +25,7 @@
 .contact-page .contact-hero {
   position: relative;
   min-height: 100vh;
+  margin-top: 30px;
   padding: 100px 0 100px;
   background:
     radial-gradient(circle at top right, #ffe7d1, transparent 60%),

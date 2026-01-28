@@ -64,15 +64,27 @@ export default function Updates() {
 
           <div className="hero-cards">
             <div className="hero-card reveal-right delay-1">
-              <strong>Latest</strong><br/>
+              <h3>Daily Announcements</h3>
+              <p>Important notices and updates shared with students and parents.</p>
+            </div>
+
+            <div className="hero-card accent reveal-right delay-2">
+              <h3>Event Highlights</h3>
+              <p>Coverage of school events, activities, and celebrations.</p>
+            </div>
+          </div>
+
+          {/* <div className="hero-cards">
+            <div className="hero-card reveal-right delay-1">
+              <strong>Latest</strong><br />
               <span>School News</span>
             </div>
 
             <div className="hero-card reveal-right delay-2">
-              <strong>Events</strong><br/>
+              <strong>Events</strong><br />
               <span>Programs & Notices</span>
             </div>
-          </div>
+          </div> */}
 
         </div>
       </section>

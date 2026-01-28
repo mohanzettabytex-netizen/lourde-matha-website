@@ -34,7 +34,7 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont;
   color: var(--dark);
   max-width: 100vw;
-  overflow-x: hidden;
+  overflow: visible;
 }
 
 /* ===============================
@@ -42,11 +42,13 @@ body {
 ================================ */
 .about-hero {
   padding: 100px 0 100px;
+  margin-top: 30px;
+
   background:
     radial-gradient(circle at top right, #ffe7d1, transparent 60%),
     radial-gradient(circle at bottom left, #ffedd5, transparent 55%),
     var(--white);
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* GRID */
@@ -198,7 +200,7 @@ body {
 .people-card {
   background: #fff;
   border-radius: 22px;
-  box-shadow: 0 24px 48px rgba(0,0,0,0.12);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12);
   padding: 12px;
 
   height: 260px;
@@ -218,6 +220,7 @@ body {
   object-fit: contain;
   display: block;
 }
+
 .people-card.see-more {
   cursor: pointer;
   background: linear-gradient(135deg, var(--primary-soft), #fff);
@@ -240,7 +243,7 @@ body {
 
 
 
- 
+
 
 /* RESPONSIVE */
 @media (max-width: 600px) {

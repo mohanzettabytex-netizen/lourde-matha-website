@@ -48,7 +48,7 @@ export default function Gallery() {
             </p>
           </div>
 
-          <div className="hero-cards">
+          {/* <div className="hero-cards">
             <div className="hero-card reveal-right delay-1">
               <strong>Campus</strong> <br />
               <span>Life & Activities</span>
@@ -58,7 +58,20 @@ export default function Gallery() {
               <strong>Events</strong><br />
               <span>Celebrations & Programs</span>
             </div>
+          </div> */}
+
+          <div className="hero-cards">
+            <div className="hero-card reveal-right delay-1">
+              <h3>Academic Activities</h3>
+              <p>Snapshots of classroom learning and academic programs</p>
+            </div>
+
+            <div className="hero-card accent reveal-right delay-2">
+              <h3>Cultural Programs</h3>
+              <p>Expressions of talent through music, dance, and drama.</p>
+            </div>
           </div>
+
 
         </div>
       </section>

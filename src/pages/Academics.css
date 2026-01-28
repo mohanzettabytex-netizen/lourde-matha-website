@@ -4,7 +4,7 @@
 .academics {
   font-family: system-ui, -apple-system, BlinkMacSystemFont;
   color: var(--dark);
-  overflow-x: hidden;
+  overflow: visible;
 }
 
 /* ===============================
@@ -13,6 +13,8 @@
 .academics .academics-hero {
   position: relative;
   min-height: 100vh;
+  margin-top: 30px;
+
   padding: 100px 0 100px;
   background:
     radial-gradient(circle at top right, #ffe7d1, transparent 60%),
@@ -202,9 +204,12 @@
 }
 
 .academics .student-head {
-  display: block;        /* force new line */
-  position: relative;   /* avoid stacking issues */
-  z-index: 2;            /* above avatar */
+  display: block;
+  /* force new line */
+  position: relative;
+  /* avoid stacking issues */
+  z-index: 2;
+  /* above avatar */
 }
 
 
@@ -243,7 +248,7 @@
   text-align: center;
   box-shadow: 0 28px 60px rgba(0, 0, 0, 0.08);
 }
- 
+
 .academics .avatar {
   width: 120px;
   height: 120px;
@@ -257,7 +262,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top; /* ✅ FIX: show head & hair */
+  object-position: center top;
+  /* ✅ FIX: show head & hair */
   display: block;
 }
 

@@ -67,7 +67,7 @@ export default function Sports() {
                 <div className="container hero-grid">
 
                     <div className="hero-text reveal">
-                        <span className="hero-badge">Student Life</span>
+                        <span className="hero-badge">Sports</span>
                         <h1>Sports & Physical Activities</h1>
                         <p>
                             Sports play a vital role in developing discipline,
@@ -112,10 +112,11 @@ export default function Sports() {
                 </section>
             ))}
 
-            {/* STATEMENT */}
-            <section className="sports-statement reveal">
+            
+
+            <section className="admissions-statement reveal">
                 <div className="container">
-                    <h3>Our Sports Philosophy</h3>
+                    <h2>Our Sports Philosophy</h2>
                     <strong>Fitness • Discipline • Teamwork</strong>
                 </div>
             </section>
