@@ -20,14 +20,14 @@ import aiTraining from "../Assets/Facilities/fac-3.jpg";
 //
 
 /* LAB IMAGES */
-import physics1 from "../Assets/Labs/language1.jpg";
-import physics2 from "../Assets/Labs/language1.jpg";
+import physics1 from "../Assets/Labs/phylab1.jpeg";
+import physics2 from "../Assets/Labs/phylab2.jpeg";
 
 import chemistry1 from "../Assets/Labs/chelab1.jpeg";
 import chemistry2 from "../Assets/Labs/chelab2.jpeg";
 
 import biology1 from "../Assets/Labs/biolab1.jpeg";
-import biology2 from "../Assets/Labs/biolab2.jpeg";
+import biology2 from "../Assets/Labs/biolab1.jpeg";
 
 import csSenior1 from "../Assets/Labs/cslab3.jpg";
 import csSenior2 from "../Assets/Labs/cslab5.jpg";
@@ -93,6 +93,7 @@ export default function Academics() {
       img: aiTraining,
     },
   ];
+
   const classXII = [
     { img: toper121, name: "DEEKSHA A", rank: " Rank I" },
     { img: toper122, name: "SHREE AKILA R", rank: "Rank II" },
@@ -100,8 +101,8 @@ export default function Academics() {
     { img: toper124, name: "ASWIN T", rank: "Rank III" },
   ];
   const classXI = [
-    { img: toper111, name: "SHREE VITHGASELVI", rank: "Rank I" },
-    { img: toper112, name: "EZHIL S", rank: "Rank II" },
+    { img: toper111, name: "EZHIL S", rank: "Rank I" },
+    { img: toper112, name: "SHREE VITHGASELVI", rank: "Rank II" },
     { img: toper113, name: "DANYA S", rank: "Rank III" },
   ];
   const classX = [
@@ -275,16 +276,19 @@ export default function Academics() {
               <div className="labs-grid">
                 {lab.images.map((img, i) => (
                   <div key={i} className="lab-card reveal">
-                    <img src={img} alt={lab.title} />
+                    <div className="lab-image-frame">
+                      <img src={img} alt={lab.title} />
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
           ))}
 
+
         </div>
       </section>
- 
+
 
       {/* ACADEMIC TOPPERS */}
       <section className="academics-toppers">

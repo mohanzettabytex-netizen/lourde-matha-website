@@ -191,10 +191,17 @@ body {
 /* GRID */
 .people-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 30px;
-  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
 }
+
+.people-grid.collapsed {
+  max-height: calc(2 * 260px + 24px);
+}
+.people-grid.expanded {
+  max-height: 5000px;
+}
+
 
 
 .people-card {
@@ -212,6 +219,11 @@ body {
   justify-content: center;
 }
 
+.gallery-toggle {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
 
 
 .people-card img {
@@ -223,21 +235,30 @@ body {
 
 .people-card.see-more {
   cursor: pointer;
-  background: linear-gradient(135deg, var(--primary-soft), #fff);
-  border: 2px dashed var(--primary);
+
+  background: transparent;
+  border: 1.5px solid #fb923c;
+  color: #fb923c;
+
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.35s ease;
 }
+
 
 .people-card.see-more span {
   font-size: 2rem;
-  font-weight: 800;
-  color: var(--primary-deep);
+  font-weight: 700;
+  line-height: 1;
 }
 
 .people-card.see-more p {
   font-size: 0.9rem;
-  color: var(--muted);
   margin-top: 6px;
+  font-weight: 500;
 }
 
 

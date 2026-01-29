@@ -20,7 +20,15 @@ const awardImages = importAll(
 );
 
 export default function About() {
+  const [peopleExpanded, setPeopleExpanded] = useState({});
   const [expandedSections, setExpandedSections] = useState({});
+
+  const togglePeople = (index) => {
+    setPeopleExpanded((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  };
 
   const peopleSections = [
     {
@@ -89,46 +97,63 @@ export default function About() {
     return () => observer.disconnect();
   }, []);
 
-  /* IMAGE GRID RENDER (SAFE FOR SEE MORE) */
   const renderImages = (images, sectionIndex) => {
     const isExpanded = expandedSections[sectionIndex];
 
     return (
-      <div className="people-grid">
-        {/* COLLAPSED VIEW */}
-        {!isExpanded &&
-          images.slice(0, 3).map((img, i) => (
-            <div key={i} className="people-card">
-              <img src={img} alt={`people-${i}`} />
-            </div>
-          ))}
+      <>
+        <div className="people-grid">
+          {/* COLLAPSED VIEW */}
+          {!isExpanded &&
+            images.slice(0, 3).map((img, i) => (
+              <div key={i} className="people-card">
+                <img src={img} alt={`people-${i}`} />
+              </div>
+            ))}
 
-        {/* SEE MORE CARD (4TH SLOT) */}
-        {!isExpanded && images.length > 4 && (
-          <div
-            className="people-card see-more"
-            onClick={() =>
-              setExpandedSections((prev) => ({
-                ...prev,
-                [sectionIndex]: true,
-              }))
-            }
-          >
-            <span>+{images.length - 3}</span>
-            <p>See More</p>
+          {/* SEE MORE CARD */}
+          {!isExpanded && images.length > 4 && (
+            <div
+              className="people-card see-more"
+              onClick={() =>
+                setExpandedSections((prev) => ({
+                  ...prev,
+                  [sectionIndex]: true,
+                }))
+              }
+            >
+              <span>+{images.length - 3}</span>
+              <p>See More</p>
+            </div>
+          )}
+
+          {/* EXPANDED VIEW */}
+          {isExpanded &&
+            images.map((img, i) => (
+              <div key={i} className="people-card">
+                <img src={img} alt={`people-expanded-${i}`} />
+              </div>
+            ))}
+        </div> 
+        {/* SHOW LESS BUTTON */}
+        {isExpanded && (
+          <div className="gallery-toggle">
+            <button
+              onClick={() =>
+                setExpandedSections((prev) => ({
+                  ...prev,
+                  [sectionIndex]: false,
+                }))
+              }
+            >
+              Show less
+            </button>
           </div>
         )}
-
-        {/* EXPANDED VIEW */}
-        {isExpanded &&
-          images.map((img, i) => (
-            <div key={i} className="people-card">
-              <img src={img} alt={`people-expanded-${i}`} />
-            </div>
-          ))}
-      </div>
+      </>
     );
   };
+
 
   return (
     <main className="about">

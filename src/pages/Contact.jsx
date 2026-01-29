@@ -44,7 +44,7 @@ export default function Contact() {
               admissions, academic queries, or any assistance.
             </p>
           </div>
-
+{/* 
           <div className="hero-cards">
             <div className="hero-card reveal-right delay-1">
               <strong>9 AM – 4 PM</strong>
@@ -55,7 +55,20 @@ export default function Contact() {
               <strong>Support</strong>
               <span>Always Available</span>
             </div>
+          </div> */}
+
+          <div className="hero-cards">
+            <div className="hero-card reveal-right delay-1">
+              <h3>Office Hours</h3>
+              <p>9 AM – 4 PM</p>
+            </div>
+
+            <div className="hero-card accent reveal-right delay-2">
+              <h3>Support</h3>
+              <p>Always Available</p>
+            </div>
           </div>
+
 
         </div>
       </section>
@@ -79,7 +92,18 @@ export default function Contact() {
           <div className="info-card reveal delay-1">
             <span>Address</span>
             <h3>School Location</h3>
-            <p>Dhali Road, Udumalpet</p>
+            <p>
+              <a
+                href="https://maps.app.goo.gl/kD9UEFjSfAeUpqFRA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="map-link"
+              >
+                Click Here to View on Google Maps <br />
+
+              </a>
+            </p>
+
 
             <br />
 
@@ -94,7 +118,7 @@ export default function Contact() {
 
             <span>Email</span>
             <h3>Contact Email</h3>
-            <p>info@lourdematha.edu</p>
+            <p>lmcm.school@gmail.com</p>
           </div>
 
           {/* FORM CARD */}
@@ -117,7 +141,7 @@ export default function Contact() {
       <section className="contact-commitment reveal">
         <div className="container">
           <h2>We Value Communication</h2>
-          <p>Care • Clarity • Commitment</p>
+          <strong>Care • Clarity • Commitment</strong>
         </div>
       </section>
 

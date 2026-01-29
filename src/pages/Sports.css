@@ -55,18 +55,24 @@
 ================================ */
 .sports-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 28px; /* SAME as toppers-grid */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
 }
-
-/* ===============================
-   IMAGE CARD
-================================ */
+ 
 .sports-card {
+  width: 100%;
   position: relative;
   overflow: hidden;
   border-radius: 22px;
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12);
+}
+.sports-grid:has(.sports-card:only-child) {
+  justify-items: center;
+}
+
+.sports-grid:has(.sports-card:only-child) .sports-card {
+  grid-column: 1 / -1;        /* spans both columns */
+  max-width: 50%;             /* SAME width as one column */
 }
 
 .sports-card img {
@@ -75,6 +81,7 @@
   object-fit: cover;
   transition: transform 0.6s ease;
 }
+
 
 .sports-card:hover img {
   transform: scale(1.08);

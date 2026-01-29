@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./Gallery.css";
 import { loadImagesFromFolder } from "../utils/loadImages";
 
@@ -10,6 +10,14 @@ const galleryCategories = {
 
 
 export default function Gallery() {
+  const [expanded, setExpanded] = useState({});
+
+  const toggleCategory = (category) => {
+    setExpanded((prev) => ({
+      ...prev,
+      [category]: !prev[category],
+    }));
+  };
 
   useEffect(() => {
     const elements = document.querySelectorAll(
@@ -101,7 +109,10 @@ export default function Gallery() {
                 </h3>
 
                 {/* IMAGE GRID */}
-                <div className="gallery-grid">
+                <div
+                  className={`gallery-grid ${expanded[category] ? "expanded" : "collapsed"
+                    }`}
+                >
                   {images.map((img, i) => (
                     <div
                       key={i}
@@ -115,6 +126,14 @@ export default function Gallery() {
                     </div>
                   ))}
                 </div>
+
+                {images.length > 6 && (
+                  <div className="gallery-toggle">
+                    <button onClick={() => toggleCategory(category)}>
+                      {expanded[category] ? "Show less" : "See more"}
+                    </button>
+                  </div>
+                )}
 
               </div>
             )

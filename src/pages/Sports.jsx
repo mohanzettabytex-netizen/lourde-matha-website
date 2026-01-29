@@ -40,22 +40,22 @@ export default function Sports() {
         {
             title: "Hockey",
             desc: "Structured hockey training that develops teamwork, endurance, discipline, and competitive spirit.",
-            images: [hockey1, hockey2],
+            images: [hockey1],
         },
         {
             title: "Football",
             desc: "Football coaching focused on fitness, coordination, strategy, and sportsmanship.",
-            images: [football1, football2],
+            images: [football1],
         },
         {
             title: "Basketball",
             desc: "Basketball activities that improve agility, focus, teamwork, and leadership skills.",
-            images: [basketball1, basketball2],
+            images: [basketball1],
         },
         {
             title: "Athletic Events",
             desc: "Track and field events that promote speed, strength, stamina, and healthy competition.",
-            images: [athletics1, athletics2],
+            images: [athletics1],
         },
     ];
 
