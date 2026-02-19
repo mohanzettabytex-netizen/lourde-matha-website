@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./Gallery.css";
 import { loadImagesFromFolder } from "../utils/loadImages";
 
@@ -10,6 +10,14 @@ const galleryCategories = {
 
 
 export default function Gallery() {
+  const [expanded, setExpanded] = useState({});
+
+  const toggleCategory = (category) => {
+    setExpanded((prev) => ({
+      ...prev,
+      [category]: !prev[category],
+    }));
+  };
 
   useEffect(() => {
     const elements = document.querySelectorAll(
@@ -48,7 +56,7 @@ export default function Gallery() {
             </p>
           </div>
 
-          <div className="hero-cards">
+          {/* <div className="hero-cards">
             <div className="hero-card reveal-right delay-1">
               <strong>Campus</strong> <br />
               <span>Life & Activities</span>
@@ -58,7 +66,20 @@ export default function Gallery() {
               <strong>Events</strong><br />
               <span>Celebrations & Programs</span>
             </div>
+          </div> */}
+
+          <div className="hero-cards">
+            <div className="hero-card reveal-right delay-1">
+              <h3>Academic Activities</h3>
+              <p>Snapshots of classroom learning and academic programs</p>
+            </div>
+
+            <div className="hero-card accent reveal-right delay-2">
+              <h3>Cultural Programs</h3>
+              <p>Expressions of talent through music, dance, and drama.</p>
+            </div>
           </div>
+
 
         </div>
       </section>
@@ -88,7 +109,10 @@ export default function Gallery() {
                 </h3>
 
                 {/* IMAGE GRID */}
-                <div className="gallery-grid">
+                <div
+                  className={`gallery-grid ${expanded[category] ? "expanded" : "collapsed"
+                    }`}
+                >
                   {images.map((img, i) => (
                     <div
                       key={i}
@@ -103,6 +127,14 @@ export default function Gallery() {
                   ))}
                 </div>
 
+                {images.length > 6 && (
+                  <div className="gallery-toggle">
+                    <button onClick={() => toggleCategory(category)}>
+                      {expanded[category] ? "Show less" : "See more"}
+                    </button>
+                  </div>
+                )}
+
               </div>
             )
           )}
@@ -115,7 +147,7 @@ export default function Gallery() {
       <section className="gallery-commitment reveal">
         <div className="container">
           <h2>Life at Lourde Matha</h2>
-          <p>Learning • Celebration • Growth</p>
+          <strong>Learning • Celebration • Growth</strong>
         </div>
       </section>
 

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../Assets/Logo/logo.png";
 import "./Navbar.css";
@@ -7,6 +7,19 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const closeMenu = () => setOpen(false);
+
+  useEffect(() => {
+    if (open) {
+      document.body.classList.add("mobile-menu-open");
+    } else {
+      document.body.classList.remove("mobile-menu-open");
+    }
+
+    return () => {
+      document.body.classList.remove("mobile-menu-open");
+    };
+  }, [open]);
+
 
   return (
     <>
@@ -34,6 +47,7 @@ export default function Navbar() {
             <NavLink to="/gallery">Gallery</NavLink>
             <NavLink to="/rules">Rules</NavLink>
             <NavLink to="/admissions">Admissions</NavLink>
+            <NavLink to="/sports">Sports</NavLink>
             <NavLink to="/contact" className="nav-cta">
               Contact
             </NavLink>
@@ -84,6 +98,7 @@ export default function Navbar() {
           <NavLink onClick={closeMenu} to="/about">About</NavLink>
           <NavLink onClick={closeMenu} to="/academics">Academics</NavLink>
           <NavLink onClick={closeMenu} to="/student-life">Student Life</NavLink>
+          <NavLink onClick={closeMenu} to="/sports">Sports</NavLink>
           <NavLink onClick={closeMenu} to="/updates">Updates</NavLink>
           <NavLink onClick={closeMenu} to="/rules">Rules</NavLink>
           <NavLink onClick={closeMenu} to="/gallery">Gallery</NavLink>

@@ -4,7 +4,7 @@
 .academics {
   font-family: system-ui, -apple-system, BlinkMacSystemFont;
   color: var(--dark);
-  overflow-x: hidden;
+  overflow: visible;
 }
 
 /* ===============================
@@ -13,6 +13,8 @@
 .academics .academics-hero {
   position: relative;
   min-height: 100vh;
+  margin-top: 30px;
+
   padding: 100px 0 100px;
   background:
     radial-gradient(circle at top right, #ffe7d1, transparent 60%),
@@ -202,9 +204,12 @@
 }
 
 .academics .student-head {
-  display: block;        /* force new line */
-  position: relative;   /* avoid stacking issues */
-  z-index: 2;            /* above avatar */
+  display: block;
+  /* force new line */
+  position: relative;
+  /* avoid stacking issues */
+  z-index: 2;
+  /* above avatar */
 }
 
 
@@ -243,7 +248,7 @@
   text-align: center;
   box-shadow: 0 28px 60px rgba(0, 0, 0, 0.08);
 }
- 
+
 .academics .avatar {
   width: 120px;
   height: 120px;
@@ -257,7 +262,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top; /* ✅ FIX: show head & hair */
+  object-position: center top;
+  /* ✅ FIX: show head & hair */
   display: block;
 }
 
@@ -274,6 +280,182 @@
   font-size: 0.9rem;
   color: var(--muted);
 }
+
+/* ===============================
+   ADVANCED LEARNING FACILITIES
+================================ */
+.academics .academics-facilities {
+  padding: 120px 0;
+  background: linear-gradient(135deg, var(--primary-soft), var(--white));
+}
+
+/* HEADER */
+.academics .facilities-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 80px;
+}
+
+.academics .facilities-header span {
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--primary-deep);
+}
+
+.academics .facilities-header h2 {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  margin: 16px 0;
+}
+
+.academics .facilities-header p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+/* GRID */
+.academics .facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 36px;
+}
+
+/* CARD */
+.academics .facility-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(14px);
+  padding: 28px;
+  border-radius: 26px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+/* IMAGE */
+.academics .facility-image {
+  height: 180px;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.academics .facility-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TEXT */
+.academics .facility-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--primary-deep);
+}
+
+.academics .facility-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .academics .facility-image {
+    height: 160px;
+  }
+}
+
+
+/* ===============================
+   LABORATORIES SECTION
+================================ */
+.academics .academics-labs {
+  padding: 120px 0;
+  background: linear-gradient(135deg, var(--primary-soft), var(--white));
+}
+
+/* HEADER */
+.academics .labs-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 80px;
+}
+
+.academics .labs-header span {
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary-deep);
+}
+
+.academics .labs-header h2 {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  margin: 16px 0;
+}
+
+.academics .labs-header p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+/* EACH LAB BLOCK */
+.academics .lab-block {
+  margin-bottom: 100px;
+}
+
+.academics .lab-header {
+  max-width: 720px;
+  margin-bottom: 36px;
+}
+
+.academics .lab-header h3 {
+  font-size: 1.6rem;
+  color: var(--primary-deep);
+  margin-bottom: 10px;
+}
+
+.academics .lab-header p {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* GRID */
+.academics .labs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+
+/* IMAGE CARD */
+.academics .lab-card {
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12);
+}
+
+.academics .lab-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.academics .lab-card:hover img {
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .academics .lab-card img {
+    height: 200px;
+  }
+}
+
+
 
 /* ===============================
    RESPONSIVE (HOME LOGIC)

@@ -28,24 +28,30 @@ export default function StudentLife() {
     {
       tag: "Spiritual",
       title: "Spiritual Formation",
-      desc: "Daily prayer, moral instruction, and value-based guidance that nurture discipline, character, and inner growth."
+      desc: "Daily prayer, moral instruction, and value-based guidance that nurture discipline, character, faith, and inner growth among students."
     },
     {
-      tag: "Sports",
+      tag: "Language",
+      title: "Language & Communication Skills",
+      desc: "Spoken English and handwriting training that enhance communication skills, confidence, clarity, and overall academic performance."
+    },
+    {
+      tag: "Physical",
       title: "Sports & Physical Training",
-      desc: "Karate and Silambam training along with structured physical activities that promote fitness, self-defense, and discipline."
+      desc: "Yoga, Karate, and Silambam training along with structured physical activities that promote fitness, flexibility, self-discipline, and self-defense."
     },
     {
-      tag: "Culture",
-      title: "Cultural & Club Activities",
-      desc: "Cultural activities include Karate, Silambam, and various club activities that encourage creativity, participation, and talent development."
+      tag: "Arts",
+      title: "Arts & Creative Activities",
+      desc: "Drawing and instrumental music classes that encourage creativity, artistic expression, rhythm, and appreciation of culture."
     },
     {
       tag: "Leadership",
       title: "Leadership & Discipline",
-      desc: "Leadership and discipline are fostered through the School Parliament for both Senior and Junior students, developing responsibility and democratic values."
+      desc: "Leadership and discipline are fostered through the School Parliament for both Senior and Junior students, developing responsibility, confidence, and democratic values."
     }
   ];
+
 
 
   return (
@@ -67,7 +73,7 @@ export default function StudentLife() {
             </p>
           </div>
 
-          <div className="hero-cards">
+          {/* <div className="hero-cards">
             <div className="hero-card reveal-right delay-1">
               <strong>Balanced</strong><br />
               <span>Mind & Body</span>
@@ -76,6 +82,18 @@ export default function StudentLife() {
             <div className="hero-card reveal-right delay-2">
               <strong>Values</strong><br />
               <span>Faith & Discipline</span>
+            </div>
+          </div> */}
+
+          <div className="hero-cards">
+            <div className="hero-card reveal-right delay-1">
+              <h3>Value-Based Learning</h3>
+              <p>Instilling moral values, discipline, and responsibility.</p>
+            </div>
+
+            <div className="hero-card accent reveal-right delay-2">
+              <h3>Creative Expression</h3>
+              <p>Opportunities in arts, culture, and extracurricular activities.</p>
             </div>
           </div>
 
@@ -110,7 +128,7 @@ export default function StudentLife() {
       <section className="studentlife-commitment reveal">
         <div className="container">
           <h2>Shaping Well-Rounded Individuals</h2>
-          <p>Faith • Discipline • Leadership</p>
+          <strong>Faith • Discipline • Leadership</strong>
         </div>
       </section>
 

@@ -8,6 +8,34 @@ import toper112 from "../Assets/Toppers/11-2.png";
 import toper113 from "../Assets/Toppers/11-3.png";
 import toper211 from "../Assets/Toppers/10-1.png";
 import toper212 from "../Assets/Toppers/10-2.png";
+
+//
+
+import smartClass from "../Assets/Facilities/fac-1.jpg";
+import digitalBoard from "../Assets/Facilities/fac-2.jpg";
+import stemLab from "../Assets/Facilities/fac-3.jpg";
+import audioLab from "../Assets/Facilities/fac-1.jpg";
+import roboticsLab from "../Assets/Facilities/fac-2.jpg";
+import aiTraining from "../Assets/Facilities/fac-3.jpg";
+//
+
+/* LAB IMAGES */
+import physics1 from "../Assets/Labs/phylab1.jpeg";
+import physics2 from "../Assets/Labs/phylab2.jpeg";
+
+import chemistry1 from "../Assets/Labs/chelab1.jpeg";
+import chemistry2 from "../Assets/Labs/chelab2.jpeg";
+
+import biology1 from "../Assets/Labs/biolab1.jpeg";
+import biology2 from "../Assets/Labs/biolab1.jpeg";
+
+import csSenior1 from "../Assets/Labs/cslab3.jpg";
+import csSenior2 from "../Assets/Labs/cslab5.jpg";
+
+import csJunior1 from "../Assets/Labs/childlab1.jpg";
+import csJunior2 from "../Assets/Labs/childlab2.jpg";
+
+
 import "./Academics.css";
 
 export default function Academics() {
@@ -33,22 +61,80 @@ export default function Academics() {
     return () => observer.disconnect();
   }, []);
 
+  const facilities = [
+    {
+      title: "Smart Class",
+      desc: "Interactive smart classrooms equipped with digital teaching tools for enhanced learning.",
+      img: smartClass,
+    },
+    {
+      title: "Digital Board",
+      desc: "Modern digital boards that support visual learning and interactive teaching methods.",
+      img: digitalBoard,
+    },
+    {
+      title: "STEM Lab",
+      desc: "Hands-on STEM lab encouraging innovation, experimentation, and problem-solving skills.",
+      img: stemLab,
+    },
+    {
+      title: "Audio Recording Lab",
+      desc: "Audio recording facilities to support language learning, pronunciation, and creative expression.",
+      img: audioLab,
+    },
+    {
+      title: "Robotics Lab",
+      desc: "Dedicated robotics lab enabling students to explore automation, mechanics, and coding.",
+      img: roboticsLab,
+    },
+    {
+      title: "AI Training",
+      desc: "Introduction to Artificial Intelligence concepts to prepare students for future technologies.",
+      img: aiTraining,
+    },
+  ];
+
   const classXII = [
     { img: toper121, name: "DEEKSHA A", rank: " Rank I" },
     { img: toper122, name: "SHREE AKILA R", rank: "Rank II" },
     { img: toper123, name: "MADHUMITHA K", rank: "Rank III" },
     { img: toper124, name: "ASWIN T", rank: "Rank III" },
   ];
-
   const classXI = [
-    { img: toper111, name: "SHREE VITHGASELVI", rank: "Rank I" },
-    { img: toper112, name: "EZHIL S", rank: "Rank II" },
+    { img: toper111, name: "EZHIL S", rank: "Rank I" },
+    { img: toper112, name: "SHREE VITHGASELVI", rank: "Rank II" },
     { img: toper113, name: "DANYA S", rank: "Rank III" },
   ];
-
   const classX = [
     { img: toper211, name: "PRIYANKA B", rank: "Rank I" },
     { img: toper212, name: "ABISHEK V P", rank: "Rank II" },
+  ];
+  const labs = [
+    {
+      title: "Physics Laboratory",
+      desc: "Hands-on experiments that strengthen conceptual understanding of physical sciences.",
+      images: [physics1, physics2],
+    },
+    {
+      title: "Chemistry Laboratory",
+      desc: "Well-equipped lab for safe and practical chemical experiments.",
+      images: [chemistry1, chemistry2],
+    },
+    {
+      title: "Biology Laboratory",
+      desc: "Advanced biology lab supporting microscopic and life science studies.",
+      images: [biology1, biology2],
+    },
+    {
+      title: "Computer Science Lab (Senior)",
+      desc: "Modern computer lab for senior students focusing on programming and technology.",
+      images: [csSenior1, csSenior2],
+    },
+    {
+      title: "Computer Science Lab (Junior)",
+      desc: "Student-friendly computer lab introducing digital learning at early stages.",
+      images: [csJunior1, csJunior2],
+    },
   ];
 
 
@@ -138,6 +224,71 @@ export default function Academics() {
 
         </div>
       </section>
+
+      {/* ADVANCED LEARNING FACILITIES */}
+      <section className="academics-facilities">m
+        <div className="container">
+
+          <div className="facilities-header reveal">
+            <span>Infrastructure</span>
+            <h2>Advanced Learning Facilities</h2>
+            <p>
+              Our institution integrates modern technology and innovative
+              learning spaces to enhance academic excellence and future readiness.
+            </p>
+          </div>
+
+          <div className="facilities-grid">
+            {facilities.map((item, index) => (
+              <div key={index} className="facility-card reveal">
+                <div className="facility-image">
+                  <img src={item.img} alt={item.title} />
+                </div>
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* LABORATORIES */}
+      <section className="academics-labs">
+        <div className="container">
+
+          <div className="labs-header reveal">
+            <span>Infrastructure</span>
+            <h2>Science & Computer Laboratories</h2>
+            <p>
+              Our laboratories provide hands-on learning experiences that
+              strengthen scientific thinking, innovation, and technical skills.
+            </p>
+          </div>
+
+          {labs.map((lab, index) => (
+            <div key={index} className="lab-block">
+              <div className="lab-header reveal">
+                <h3>{lab.title}</h3>
+                <p>{lab.desc}</p>
+              </div>
+
+              <div className="labs-grid">
+                {lab.images.map((img, i) => (
+                  <div key={i} className="lab-card reveal">
+                    <div className="lab-image-frame">
+                      <img src={img} alt={lab.title} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+
+
+        </div>
+      </section>
+
 
       {/* ACADEMIC TOPPERS */}
       <section className="academics-toppers">

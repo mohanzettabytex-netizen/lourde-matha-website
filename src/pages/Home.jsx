@@ -36,6 +36,17 @@ const chavaraQuotes = [
   "Let there be no day in your life in which you do no good to others."
 ];
 
+const wordOfGodQuotes = [
+  "The Lord is my shepherd; I shall not want. (Psalm 23:1)",
+  "I am the way and the truth and the life. (John 14:6)",
+  "Be still, and know that I am God. (Psalm 46:10)",
+  "Ask and it will be given to you. (Matthew 7:7)",
+  "The Lord is with you wherever you go. (Joshua 1:9)",
+  "Your word is a lamp for my feet. (Psalm 119:105)",
+  "Love one another as I have loved you. (John 13:34)",
+];
+
+
 
 const stats = [
   {
@@ -68,6 +79,8 @@ const stats = [
 export default function Home() {
   const [active, setActive] = useState(0);
   const [quoteIndex, setQuoteIndex] = useState(0);
+  const [wordIndex, setWordIndex] = useState(0);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -86,47 +99,68 @@ export default function Home() {
     return () => clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setWordIndex((prev) => (prev + 1) % wordOfGodQuotes.length);
+    }, 5000); // slower for Bible verse reading
 
-  function Stat({ value, suffix, label }) {
-    const [count, setCount] = useState(0);
-    const ref = useRef(null);
-    const hasRun = useRef(false);
+    return () => clearInterval(interval);
+  }, []);
 
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting && !hasRun.current) {
-            hasRun.current = true;
 
-            let start = 0;
-            const duration = 2000;
-            const increment = Math.ceil(value / (duration / 16));
+function Stat({ value, suffix, label }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
 
-            const counter = setInterval(() => {
-              start += increment;
-              if (start >= value) {
-                setCount(value);
-                clearInterval(counter);
-              } else {
-                setCount(start);
-              }
-            }, 16);
-          }
-        },
-        { threshold: 0.4 }
-      );
+  useEffect(() => {
+    const alreadyRun = sessionStorage.getItem("statsAnimated");
 
-      if (ref.current) observer.observe(ref.current);
-      return () => observer.disconnect();
-    }, [value]);
+    // 👉 If animation already ran, show final value immediately
+    if (alreadyRun) {
+      setCount(value);
+      return;
+    }
 
-    return (
-      <div ref={ref} className="stat">
-        <strong>{count}{suffix}</strong>
-        <span>{label}</span>
-      </div>
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          sessionStorage.setItem("statsAnimated", "true");
+
+          let start = 0;
+          const duration = 2000;
+          const increment = Math.ceil(value / (duration / 16));
+
+          const counter = setInterval(() => {
+            start += increment;
+            if (start >= value) {
+              setCount(value); // ✅ final value locked
+              clearInterval(counter);
+            } else {
+              setCount(start);
+            }
+          }, 16);
+
+          observer.disconnect(); // run only once
+        }
+      },
+      { threshold: 0.4 }
     );
-  }
+
+    if (ref.current) observer.observe(ref.current);
+
+    return () => observer.disconnect();
+  }, [value]);
+
+ return (
+  <div ref={ref} className="stat">
+    <strong>{count}{suffix}</strong>
+    <span>{label}</span>
+  </div>
+);
+
+}
+
+
 
 
   return (
@@ -160,27 +194,46 @@ export default function Home() {
 
             <div className="hero-actions">
               <a href="/about" className="btn-primary">Explore School</a>
-              <a href="/admissions" className="btn-outline">Admissions</a>
+              <a href="/admissions" className="btn-primary">Admissions</a>
             </div>
           </div>
 
           <div className="hero-cards">
 
-            <div className="quote-scroller">
-              <span className="quote-label">Message of St. Chavara</span>
-              <div className="quote-window">
-                <p key={quoteIndex} className="quote-text">
-                  “{chavaraQuotes[quoteIndex]}”
-                </p>
+            {/* QUOTES GROUP */}
+            <div className="hero-quotes">
+              <div className="quote-scroller chavara">
+                <span className="quote-label">Message of St. Chavara</span>
+                <div className="quote-window">
+                  <p key={quoteIndex} className="quote-text">
+                    “{chavaraQuotes[quoteIndex]}”
+                  </p>
+                </div>
+              </div>
+
+              <div className="quote-scroller word-of-god">
+                <span className="quote-label">Word of God</span>
+                <div className="quote-window">
+                  <p key={wordIndex} className="quote-text">
+                    “{wordOfGodQuotes[wordIndex]}”
+                  </p>
+                </div>
               </div>
             </div>
-            {stats.slice(0, 2).map((s) => (
-              <div key={s.label} className="hero-card">
-                <strong>{s.value}</strong>
-                <span>{s.label}</span>
-              </div>
-            ))}
+
+            {/* STATS GROUP */}
+            <div className="hero-stats-inline">
+              {stats.slice(0, 2).map((s) => (
+                <div key={s.label} className="hero-card">
+                  <strong>{s.value}{s.suffix}</strong>
+                  <span>{s.label}</span>
+                </div>
+              ))}
+            </div>
+
           </div>
+
+
         </div>
       </section>
 
@@ -238,7 +291,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* STATS */}
+      {/* STATS */} 
       <section className="home-stats">
         <div className="container stats-grid">
           {stats.map((s) => (
